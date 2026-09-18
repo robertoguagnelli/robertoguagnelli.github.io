@@ -18,3 +18,5 @@ Mechanical &amp; Aerospace Engineering Portfolio | Aircraft Design, CAD, CFD, FE
 5. FAMEX is personal photography, separate from project evidence. Prefer aircraft, CAD, test and CFD imagery for the main portfolio.
 
 Run locally: `python3 -m http.server 8000` from the repository root.
+
+- `projects/hyperion.html`: SAE Aero Design México 2024 Regular Class; manufacturing coordination and nose landing gear case study. Photos, flight video and award evidence have labeled media placeholders. The 4 kg aircraft mass is kept as reported; empty/loaded condition has not been specified.
