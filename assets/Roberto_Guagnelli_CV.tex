@@ -1,0 +1,77 @@
+% Compile with pdfLaTeX. One column; searchable text; no external assets.
+% Tailor to each vacancy using only skills and experience you can substantiate.
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage[left=0.5in,right=0.5in,top=0.48in,bottom=0.48in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\hypersetup{pdftitle={Roberto Guagnelli Garcia - Mechanical Engineering CV},pdfauthor={Roberto Guagnelli Garcia}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+\setlist[itemize]{leftmargin=13pt,labelsep=5pt,topsep=2pt,itemsep=1.5pt,parsep=0pt,partopsep=0pt}
+\newcommand{\cvsection}[1]{\vspace{8pt}{\large\bfseries #1}\par\vspace{1pt}\hrule\vspace{4pt}}
+\newcommand{\entry}[2]{#1\hfill #2\par}
+\begin{document}
+{\Large\bfseries ROBERTO GUAGNELLI GARCÍA}\par
+\vspace{2pt}
+{\small +52 55 4976 5729 $|$ \href{mailto:robguagnelli@gmail.com}{robguagnelli@gmail.com} $|$ Juriquilla, Querétaro, Mexico}\par
+{\small \href{https://www.linkedin.com/in/roberto-guagnelli-garcia/}{linkedin.com/in/roberto-guagnelli-garcia} $|$ Portfolio: \href{https://robertoguagnelli.github.io/}{robertoguagnelli.github.io}}\par
+\vspace{3pt}
+\textbf{Mechanical Engineering Student $|$ Mechanical Design, CAD \& Aircraft Integration}
+
+\cvsection{EDUCATION}
+\entry{\textbf{Tecnológico de Monterrey}, Campus Estado de México}{Expected Jul 2027}
+B.S. in Mechanical Engineering; Concentration in Aerospace Engineering\par
+\textbf{Academic average: 92/100 (3.7/4.0 GPA)}
+
+\cvsection{WORK EXPERIENCE}
+\entry{\textbf{GE Aerospace} $|$ Designer Intern, Product Definition}{Aug 2026 -- Present}
+\textit{RISE Open Fan Program}
+\begin{itemize}
+\item Develop electrical harness routing and mounting bracket CAD models in Siemens NX; review interferences and apply design for manufacturability (DFM) and maintainability criteria to component integration.
+\item Prepare engineering drawings defining component geometry and design requirements for the RISE Open Fan program.
+\end{itemize}
+\vspace{3pt}
+\entry{\textbf{GE Aerospace} $|$ Lean Summer Experience Intern}{Jun 2026 -- Jul 2026}
+\textit{Integrated Performance \& Operability (IP\&O)}
+\begin{itemize}
+\item Implemented visual planning, dashboards and agreed review practices with subsection managers and program leads; reduced average weekly meeting duration by 20\%, as timed by meeting leaders.
+\item Defined and tracked key performance indicators (KPIs) and supported cloud database migration to improve performance visibility across management and engineering teams.
+\end{itemize}
+
+\cvsection{ENGINEERING PROJECTS \& LEADERSHIP}
+\entry{\textbf{Borregos CEM AeroDesign} $|$ Tecnológico de Monterrey}{2024 -- Present}
+\entry{\textit{Engineering Coordinator / Design Captain}}{Aug 2024 -- Present}
+\begin{itemize}
+\item Lead a five-person design team and coordinate 40+ members across design, structures, electronics and R\&D; developed Wingull (2025) and Latías (2026) from conceptual design through flight testing.
+\item Personally modeled 300+ CAD parts per aircraft within 400+ component assemblies; evaluated mass, center of gravity, stability, materials and motor/propeller combinations to guide design decisions.
+\item Performed steady-state and transient computational fluid dynamics (CFD) studies of airfoils and vortex formation to assess aerodynamic performance and inform stability evaluation; used drag coefficients in takeoff models to estimate payload capability at different density altitudes.
+\item Designed removable joints for Wingull's 4.2 m wing to enable breakdown into components under 1.2 m; supported an 18 kg distributed-mass wing test with measured tip deflection within 8\% of predictions.
+\item Redesigned a 3D-printed PETG bottle retainer for Latías after insertion-force and fracture issues; revised geometry completed 50 insertion/removal cycles without observed cracks or permanent deformation.
+\item Integrated Latías' twin-engine configuration, which flew with 6 kg payload at 7 kg empty mass; Wingull flew with 4 kg payload at 6 kg empty mass.
+\end{itemize}
+\vspace{3pt}
+\entry{\textit{Manufacturing Coordinator $|$ Hyperion}}{2024}
+\begin{itemize}
+\item Coordinated eight members in aircraft fabrication, assembly and quality control; designed and manufactured a welded-aluminum nose landing gear with a spring, travel stop and fork to accommodate limited propeller clearance.
+\item Supported six competition flights carrying 3 kg payload at 4 kg empty mass; team placed 2nd overall and 3rd in design report at SAE Aero Design México 2024.
+\end{itemize}
+\cvsection{TECHNICAL SKILLS}
+{\small
+\textbf{CAD \& Analysis:} Siemens NX, SolidWorks, Fusion 360, ANSYS Fluent, XFLR5; steady-state and transient CFD.\par
+\textbf{Programming \& Data:} Python, MATLAB, Excel, Power BI.\par
+\textbf{Design \& Testing:} Engineering drawings, interference checks, DFM, maintainability, propulsion selection, structural and impact testing.\par
+\textbf{Manufacturing:} 3D printing, carbon-fiber fabrication, laser cutting, aluminum welding, tube and sheet bending.\par
+\textbf{Certification:} Certified SOLIDWORKS Professional (CSWP), perfect exam score.\par
+\textbf{Languages:} Spanish (native), English (C2; Cambridge and IELTS), German (A2).
+}
+\end{document}
