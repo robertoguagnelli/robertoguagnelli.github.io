@@ -30,3 +30,15 @@
 /* Third featured aircraft: a full-width card with the same mobile layout. */
 .project-card-wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.project-card-wide .project-image{height:100%;min-height:280px}.project-card-wide .project-info{align-self:center}.project-card-wide .project-cover>strong{font-size:clamp(2rem,4vw,3.4rem)}
 @media(max-width:720px){.project-card-wide{grid-template-columns:1fr}.project-card-wide .project-image{height:250px;min-height:0}.project-card-wide .project-cover>strong{font-size:2.6rem}}
+
+/* Recruiter-ready application view: keep unfinished work in source control but hide it from the public portfolio. */
+body:not(.case-page) #analysis,
+body:not(.case-page) #additional,
+body:not(.case-page) #experience .experience-row:nth-of-type(2),
+.content-placeholder,
+.media-placeholder,
+.site-header nav a[href="#analysis"],
+.site-header nav a[href="projects/aerodynamics.html"],
+.site-header nav a[href="aerodynamics.html"],
+.analysis-return[href="aerodynamics.html"]{display:none!important}
+.case-page .section-split{grid-template-columns:1fr}
