@@ -47,3 +47,35 @@ body:not(.case-page) #experience .experience-row:nth-of-type(2),
 .latias-page .case-hero .hero-text{max-width:750px}.latias-page .aircraft-overview{margin:0}.latias-page .aircraft-overview img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 60%}.latias-page figcaption{font-size:.73rem;line-height:1.5;color:var(--muted);padding:10px 0 0}.latias-page figure{margin:0}.latias-page .case-section{scroll-margin-top:155px}.latias-page .case-section>p:not(.eyebrow){max-width:850px}.latias-page .case-section h3{margin-top:20px}.latias-page .case-section .detail-grid h3{margin-top:0}.latias-page .latias-principles,.latias-page .latias-process{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px}.latias-page .latias-principles>div,.latias-page .latias-process>div{background:var(--background);border-top:2px solid #779fc4;padding:20px}.latias-page .latias-principles strong,.latias-page .latias-process span{display:block;font-size:.69rem;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:10px}.latias-page .latias-principles span{font-size:.85rem;line-height:1.5;color:var(--navy)}.latias-page .latias-process p{font-size:.83rem;line-height:1.6;margin:0}.latias-page .latias-media-pair{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:38px;margin:30px 0}.latias-page .latias-media-pair p{font-size:.91rem}.latias-page .latias-figure-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:28px 0}.latias-page figure img{display:block;max-width:100%;width:100%;height:auto;background:#f0f3f6}.latias-page .latias-figure-grid:not(.retainers) img{height:240px;object-fit:contain;background:#fff;border:1px solid var(--border)}.latias-page .latias-wide-figure{margin:35px 0}.latias-page .latias-wide-figure img{max-width:850px;max-height:320px;object-fit:contain;background:#fff;border:1px solid var(--border)}.latias-page .retainers figure{background:var(--background);padding:15px;display:flex;flex-direction:column;align-items:center}.latias-page .retainers img{height:245px;object-fit:contain;background:transparent}.latias-page .retainers figcaption{align-self:flex-start}.latias-page .latias-test-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}.latias-page .latias-test-grid article{background:var(--background);padding:26px;display:flex;flex-direction:column}.latias-page .latias-test-grid article h3{margin:0 0 15px}.latias-page .latias-test-grid article p{font-size:.84rem}.latias-page .latias-test-grid figure,.latias-page .latias-test-grid video{margin-top:auto}.latias-page video{display:block;width:100%;background:#10243a;max-height:430px;object-fit:contain}.latias-page .latias-flight{display:grid;grid-template-columns:1fr 1.15fr;gap:35px;align-items:center;margin-top:34px}.latias-page .latias-flight h3{margin-top:0}.latias-page .latias-flight p{font-size:.86rem}.latias-page .latias-results{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:25px 0}.latias-page .latias-results>div{background:#fff;padding:20px 15px;border-top:2px solid #779fc4}.latias-page .latias-results strong{display:block;color:var(--navy);font-size:2rem;font-weight:500;letter-spacing:-.05em}.latias-page .latias-results span{display:block;font-size:.72rem;line-height:1.45;color:var(--muted)}.latias-page .latias-takeaways{padding-left:22px;max-width:850px;font-size:.88rem;line-height:1.6;color:var(--navy)}.latias-page .latias-takeaways li{padding-left:5px;margin-bottom:9px}.latias-page .case-section#results .caption{font-size:.75rem;max-width:850px}
 @media(max-width:800px){.latias-page .latias-media-pair,.latias-page .latias-flight,.latias-page .latias-test-grid{grid-template-columns:1fr}.latias-page .latias-results{grid-template-columns:repeat(2,1fr)}.latias-page .latias-figure-grid:not(.retainers) img{height:auto;min-height:190px}.latias-page .case-section{scroll-margin-top:120px}}
 @media(max-width:600px){.latias-page .latias-principles,.latias-page .latias-process,.latias-page .latias-figure-grid{grid-template-columns:1fr}.latias-page .latias-principles,.latias-page .latias-process{gap:8px}.latias-page .latias-principles>div,.latias-page .latias-process>div{padding:17px}.latias-page .retainers img{height:220px}.latias-page .latias-test-grid article{padding:18px}.latias-page .latias-results strong{font-size:1.7rem}}
+
+/* Compact Latías layout and field portrait */
+.latias-page .case-hero{padding:32px 0 38px}
+.latias-page .case-hero h1{margin-bottom:14px}
+.latias-page .case-hero h2{margin-bottom:12px}
+.latias-page .metrics{padding:20px 0;margin-bottom:22px}
+.latias-page .latias-intro-visuals{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.8fr);gap:20px;align-items:start}
+.latias-page .latias-intro-visuals figure{min-width:0}
+.latias-page .latias-intro-visuals img,.latias-page .aircraft-overview img{display:block;width:100%;height:390px;aspect-ratio:auto;object-fit:cover}
+.latias-page .aircraft-overview img{object-position:50% 67%}
+.latias-page .latias-builder-photo img{object-position:50% 44%}
+.latias-page .case-nav{padding:14px 0}
+.latias-page .case-section{padding:43px 0}
+.latias-page .case-section h2{margin-bottom:17px}
+.latias-page .case-section p{margin-bottom:15px}
+.latias-page .case-section .detail-grid{margin:18px 0 0}
+.latias-page .case-section .detail-grid article{padding:21px}
+.latias-page .latias-principles,.latias-page .latias-process{margin-top:20px}
+.latias-page .latias-media-pair{margin:20px 0;gap:26px}
+.latias-page .latias-figure-grid{margin:20px 0;gap:18px}
+.latias-page .latias-figure-grid:not(.retainers) img{height:195px}
+.latias-page .latias-wide-figure{margin:22px 0}
+.latias-page .retainers img{height:175px}
+.latias-page .latias-test-grid{gap:18px;align-items:start}
+.latias-page .latias-test-grid article{padding:21px}
+.latias-page .latias-test-grid article figure,.latias-page .latias-test-grid video{margin-top:8px}
+.latias-page .latias-test-grid video{height:285px;max-height:285px}
+.latias-page .latias-flight{gap:26px;margin-top:26px}
+.latias-page .latias-flight video{max-height:300px}
+.latias-page .case-section#results{padding:27px;margin-block:22px}
+@media(max-width:800px){.latias-page .latias-intro-visuals{grid-template-columns:1.2fr 1fr;gap:12px}.latias-page .latias-intro-visuals img,.latias-page .aircraft-overview img{height:300px}.latias-page .case-section{padding:36px 0}}
+@media(max-width:600px){.latias-page .latias-intro-visuals{grid-template-columns:1fr}.latias-page .latias-intro-visuals .latias-builder-photo{order:-1}.latias-page .latias-builder-photo img{height:auto;aspect-ratio:3/4;max-height:480px;object-fit:cover}.latias-page .aircraft-overview img{height:215px}.latias-page .case-hero{padding:24px 0 30px}.latias-page .metrics{margin-bottom:16px}.latias-page .latias-principles>div,.latias-page .latias-process>div{padding:14px}.latias-page .latias-figure-grid:not(.retainers) img{height:auto;min-height:0}.latias-page .latias-test-grid video{height:280px}}
