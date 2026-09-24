@@ -6,6 +6,14 @@
 <title>Wingull 2025 | Roberto Guagnelli</title>
 <meta name="description" content="Aircraft design, removable wing joints and structural testing, developed from concept to flight.">
 <link rel="stylesheet" href="../style.css?v=20260923-wingull">
+<style>
+.wingull-page #validation .wingull-media-pair{display:block;margin:22px 0}
+.wingull-page #validation .wingull-media-pair>div:first-child{max-width:790px}
+.wingull-page #validation .wingull-test-photo{margin-top:28px;width:100%}
+.wingull-page #validation .wingull-test-image{position:relative;width:100%;aspect-ratio:1280/315;overflow:hidden;background:var(--background)}
+.wingull-page #validation .wingull-test-image img{position:absolute;left:50%;top:50%;width:24.609375%!important;height:auto!important;max-width:none!important;max-height:none!important;transform:translate(-50%,-50%) rotate(90deg);transform-origin:center;object-fit:contain;background:transparent}
+@media(max-width:600px){.wingull-page #validation .wingull-test-photo{margin-top:22px}}
+</style>
 </head>
 <body class="case-page wingull-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -90,7 +98,7 @@
 <h2>Testing the assembled wing.</h2>
 <div class="wingull-media-pair">
 <div><p>We inverted the complete wing and applied 18 kg of distributed mass according to a Schrenk-based spanwise loading plan. This was 1.5 times the 12 kg design mass under the corresponding static load comparison.</p><p>The test checked the assembled wing at the planned load. We did not test it to failure, so it does not establish the ultimate failure load or a quantified deflection error.</p></div>
-<figure class="wingull-test-photo"><img src="../images/wingull/wing-load-test.webp" width="315" height="1280" loading="lazy" decoding="async" alt="Inverted Wingull wing with distributed weights attached along the span during the 18 kg test"><figcaption>Full-wing distributed-load test · 18 kg applied.</figcaption></figure>
+<figure class="wingull-test-photo"><div class="wingull-test-image"><img src="../images/wingull/wing-load-test.webp" width="315" height="1280" loading="lazy" decoding="async" alt="Inverted Wingull wing with distributed weights attached along the span during the 18 kg test"></div><figcaption>Full-wing distributed-load test · 18 kg applied.</figcaption></figure>
 </div>
 </section>
 <section class="case-section" id="analysis">
