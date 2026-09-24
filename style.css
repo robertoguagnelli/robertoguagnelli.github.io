@@ -85,3 +85,30 @@ body:not(.case-page) #experience .experience-row:nth-of-type(2),
 .latias-page .latias-payload-story h3{margin-top:0}
 .latias-page .latias-payload-story p{margin-bottom:0}
 @media(max-width:800px){.latias-page .latias-payload-story{grid-template-columns:1fr;gap:15px}}
+
+/* Wingull project media and compact engineering narrative */
+.wingull-page .case-hero{padding:32px 0 38px}
+.wingull-page .case-hero h1{margin-bottom:14px}
+.wingull-page .case-hero h2{margin-bottom:12px}
+.wingull-page .metrics{padding:20px 0;margin-bottom:22px}
+.wingull-page .wingull-intro-visuals{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.8fr);gap:20px;align-items:start}
+.wingull-page figure{margin:0;min-width:0}
+.wingull-page .wingull-intro-visuals img{display:block;width:100%;height:390px;object-fit:cover}
+.wingull-page .aircraft-overview img{object-position:50% 48%}
+.wingull-page .wingull-intro-visuals figure:last-child img{object-position:50% 40%}
+.wingull-page figcaption{font-size:.73rem;line-height:1.5;color:var(--muted);padding:10px 0 0}
+.wingull-page .case-nav{padding:14px 0}
+.wingull-page .case-section{padding:43px 0}
+.wingull-page .case-section h2{margin-bottom:17px}
+.wingull-page .case-section p{margin-bottom:15px}
+.wingull-page .wingull-media-pair{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin:22px 0}
+.wingull-page .wingull-media-pair img{display:block;width:100%;max-height:380px;object-fit:contain;background:var(--background)}
+.wingull-page .wingull-test-photo img{max-height:460px}
+.wingull-page .wingull-decisions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 0}
+.wingull-page .wingull-decisions article{background:var(--background);border-top:2px solid #779fc4;padding:20px}
+.wingull-page .wingull-decisions p{font-size:.83rem;line-height:1.6;margin:0}
+.wingull-page .wingull-flight{margin:26px 0}
+.wingull-page .wingull-flight video{display:block;width:100%;max-height:450px;background:#10243a}
+.wingull-page .case-section#results{padding:28px;margin-block:24px}
+@media(max-width:800px){.wingull-page .wingull-media-pair{grid-template-columns:1fr}.wingull-page .wingull-intro-visuals img{height:300px}.wingull-page .case-section{padding:36px 0}}
+@media(max-width:600px){.wingull-page .wingull-intro-visuals{grid-template-columns:1fr;gap:14px}.wingull-page .wingull-intro-visuals figure:last-child{order:-1}.wingull-page .wingull-intro-visuals figure:last-child img{height:360px}.wingull-page .aircraft-overview img{height:220px}.wingull-page .wingull-decisions{grid-template-columns:1fr;gap:9px}.wingull-page .wingull-decisions article{padding:16px}.wingull-page .case-hero{padding:24px 0 30px}}

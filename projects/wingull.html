@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Wingull 2025 | Roberto Guagnelli</title>
 <meta name="description" content="Aircraft design, removable wing joints and structural testing, developed from concept to flight.">
-<link rel="stylesheet" href="../style.css?v=20260918-hyperion">
+<link rel="stylesheet" href="../style.css?v=20260923-wingull">
 </head>
-<body class="case-page">
+<body class="case-page wingull-page">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="container nav-container">
 <a class="logo" href="../index.html"><span class="monogram" aria-hidden="true">RG.</span><span>Roberto Guagnelli</span></a>
-<nav aria-label="Main navigation"><a href="../index.html#projects">Work</a><a href="aerodynamics.html">CFD</a><a href="../index.html#experience">Experience</a><a href="../index.html#about">About</a><a href="../index.html#contact">Contact ↗</a></nav>
+<nav aria-label="Main navigation"><a href="../index.html#projects">Work</a><a href="../index.html#experience">Experience</a><a href="../index.html#about">About</a><a href="../index.html#contact">Contact ↗</a></nav>
 </div>
 </header>
 <main id="main">
 <section class="hero case-hero">
 <div class="container">
 <a class="back-link" href="../index.html#projects">← All projects</a>
-<p class="eyebrow">SAE AERO DESIGN WEST · 2025 · BORREGOS CEM</p>
+<p class="eyebrow">SAE AERO DESIGN EAST · 2025 · REGULAR CLASS · BORREGOS CEM</p>
 <h1>Wingull</h1>
 <h2>A modular aircraft, built around a 4.2 m wing.</h2>
 <p class="hero-text">Aircraft design, removable wing joints and structural testing, developed from concept to flight.</p>
@@ -45,7 +45,10 @@
 <span>Parts I modeled</span>
 </div>
 </div>
-<figure class="aircraft-overview"><img src="../images/wingull-2025-field-960.webp" srcset="../images/wingull-2025-field-480.webp 480w, ../images/wingull-2025-field-960.webp 960w, ../images/wingull-2025-field.webp 1030w" sizes="(max-width: 720px) calc(100vw - 40px), 760px" width="1030" height="1435" decoding="async" style="width:100%;height:auto;max-height:850px;object-fit:contain;background:var(--background)" alt="Team members holding Wingull outdoors, with its main wing and tail visible"><figcaption style="font-size:.75rem;color:var(--muted);padding:12px 0">Wingull · 2025 · Borregos CEM Aero Design</figcaption></figure>
+<div class="wingull-intro-visuals">
+<figure class="aircraft-overview"><img src="../images/wingull-2025-field-960.webp" srcset="../images/wingull-2025-field-480.webp 480w, ../images/wingull-2025-field-960.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), 720px" width="960" height="1338" decoding="async" alt="Wingull aircraft outdoors with the Borregos CEM team"><figcaption>Wingull · Borregos CEM Aero Design</figcaption></figure>
+<figure><img src="../images/wingull/roberto-with-wingull.webp" width="901" height="1200" decoding="async" alt="Roberto holding Wingull at the flight-test site"><figcaption>Roberto with Wingull at the test field</figcaption></figure>
+</div>
 <nav class="case-nav" aria-label="Project sections">
 <a href="#contribution">My role</a>
 <a href="#design">Design</a>
@@ -69,54 +72,33 @@
 </div>
 </section>
 <section class="case-section" id="design">
-<p class="eyebrow">01 / MODULAR AIRFRAME</p>
-<h2>A 4.2 m wing. Components under 1.2 m.</h2>
-<div class="section-split"><div>
-<p>I began this project in my third semester, learning aircraft-design fundamentals in three months before developing Wingull from October to March. The central integration challenge was a large-span aircraft that could be broken down into compact components.</p>
-<p>Inspired by RC aircraft, I designed removable joints with three pine alignment pins engaging the adjacent wing section. Electrical connectors served the ailerons. Upper and lower aluminum locking plates were secured with bolts passing through the main spar.</p>
-<p>The main spar used a rectangular box section with 6 mm pine upper and lower caps and ¼-inch balsa sidewalls. The joint combined mechanical alignment with a bolted connection across wing sections.</p>
-
-</div><div class="media-placeholder" role="img" aria-label="Placeholder: Wing joint — pins, plates and assembly">
-<span>PHOTO / VIDEO</span>
-<strong>Wing joint — pins, plates and assembly</strong>
-<small>Media to be added</small>
-</div></div>
+<p class="eyebrow">01 / DESIGN &amp; INTEGRATION</p>
+<h2>A 4.2 m wing built to travel.</h2>
+<p>The aircraft had to fit into components shorter than 1.2 m. I designed removable wing joints with three pine alignment pins, connectors for the aileron wiring, and aluminum locking plates bolted above and below the main spar.</p>
+<div class="wingull-media-pair">
+<div><h3>A joint you can inspect</h3><p>The spar used 6 mm pine caps and ¼-inch balsa sidewalls. The pins aligned adjacent sections while the plates secured the connection across the joint.</p></div>
+<figure><img src="../images/wingull/wing-joint.webp" width="1080" height="1280" loading="lazy" decoding="async" alt="Close view of Wingull's removable wing joint with pine pins and bolted aluminum plate"><figcaption>Removable wing joint during assembly.</figcaption></figure>
+</div>
+<div class="wingull-decisions">
+<article><h3>Three-part vertical tail</h3><p>I divided the vertical stabilizer into three surfaces to meet the height limit and kept each part within the 1.2 m transport constraint.</p></article>
+<article><h3>Propeller ground clearance</h3><p>The selected 24-inch propeller and wing height required a raised nose contour so the propeller would clear the runway.</p></article>
+<article><h3>A manufacturable spar</h3><p>I worked with structures to replace an impractical all-balsa proposal with pine and balsa. The balsa parts were redesigned as joined segments that fit the available laser cutter.</p></article>
+</div>
 </section>
 <section class="case-section" id="validation">
 <p class="eyebrow">02 / STRUCTURAL TEST</p>
 <h2>Testing the assembled wing.</h2>
-<p>We inverted the complete wing and applied 18 kg of distributed mass to approximate the spanwise lift distribution. The applied load was 1.5 times the weight of the 12 kg design mass.</p>
-<div class="detail-grid">
-<article>
-<h3>Within 8%</h3>
-<p>Measured tip deflection was within 8% of the prediction. The assembled joints allowed the wing to respond similarly to the continuous wooden-beam model under the tested load.</p>
-</article>
-<article>
-<h3>Proof load, not failure load</h3>
-<p>The wing passed the planned load check. Budget constraints ruled out testing to fracture, so the ultimate failure load was not established.</p>
-</article>
-</div>
-<div class="media-placeholder" role="img" aria-label="Placeholder: Full-wing distributed-load test">
-<span>PHOTO / VIDEO</span>
-<strong>Full-wing distributed-load test</strong>
-<small>Media to be added</small>
+<div class="wingull-media-pair">
+<div><p>We inverted the complete wing and applied 18 kg of distributed mass according to a Schrenk-based spanwise loading plan. This was 1.5 times the 12 kg design mass under the corresponding static load comparison.</p><p>The test checked the assembled wing at the planned load. We did not test it to failure, so it does not establish the ultimate failure load or a quantified deflection error.</p></div>
+<figure class="wingull-test-photo"><img src="../images/wingull/wing-load-test.webp" width="315" height="1280" loading="lazy" decoding="async" alt="Inverted Wingull wing with distributed weights attached along the span during the 18 kg test"><figcaption>Full-wing distributed-load test · 18 kg applied.</figcaption></figure>
 </div>
 </section>
 <section class="case-section" id="analysis">
-<p class="eyebrow">ANALYSIS TO OPERATION</p>
+<p class="eyebrow">03 / ANALYSIS TO FLIGHT</p>
 <h2>Predicting takeoff under local conditions.</h2>
-<p>I used drag coefficients from CFD in the final takeoff-run model to estimate allowable payload for the density altitude of the day. Aerodynamic work combined theory, XFLR5 and CFD.</p>
-<p>Flight testing took place at Atizapán, where air density could fall to approximately 0.7 kg/m³. An uneven runway and terrain-related wind and turbulence made testing more demanding than the Fort Worth design conditions.</p>
-<div class="note">
-<strong>What we verified</strong>
-<p>We adjusted the reference takeoff-distance limit to local conditions and checked that the aircraft became airborne before it. We did not collect measured takeoff distances for a quantitative prediction-error comparison.</p>
-</div>
-<div class="media-placeholder" role="img" aria-label="Placeholder: Wingull — CFD and flight documentation">
-<span>PHOTO / VIDEO</span>
-<strong>Wingull — CFD and flight documentation</strong>
-<small>Media to be added</small>
-</div>
-<a class="analysis-return" href="aerodynamics.html">Explore parametric studies &amp; transient CFD →</a>
+<p>I used drag coefficients from CFD in the takeoff-run model to estimate allowable payload for the density altitude of the day. Aerodynamic work combined theory, XFLR5 and CFD.</p>
+<p>Flight testing took place at Atizapán, where low air density, an uneven runway and terrain-related wind complicated operations. We adjusted the reference takeoff-distance limit to local conditions and verified that the aircraft became airborne before it. We did not log takeoff distances for a quantitative prediction-error comparison.</p>
+<figure class="wingull-flight"><video controls playsinline preload="none" poster="../images/wingull/flight-poster.jpg" aria-label="Wingull flight-test video"><source src="../videos/wingull-flight.mp4" type="video/mp4">Your browser does not support embedded video.</video><figcaption>Wingull flight test at Atizapán · compressed for web playback.</figcaption></figure>
 </section>
 <section class="case-section" id="results">
 <p class="eyebrow">RESULTS &amp; REFLECTION</p>
@@ -126,7 +108,7 @@
 <div>
 <h3>Competition results</h3>
 <table>
-<caption>SAE Aero Design West 2025</caption>
+<caption>SAE Aero Design East 2025</caption>
 <tbody>
 <tr>
 <th scope="row">Design</th>
