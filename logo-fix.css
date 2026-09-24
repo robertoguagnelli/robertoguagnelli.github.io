@@ -8,3 +8,26 @@
   outline: 0 !important;
   border-radius: 0;
 }
+
+/* Keep the complete GE mark centered inside its logo slot instead of clipping it. */
+.career-logo-ge img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  justify-self: center !important;
+  align-self: center !important;
+}
+
+/* La Corona: show only the requested month in the visible timeline date. */
+#experience .career-entry:has(.career-logo-corona) .career-role-heading span {
+  font-size: 0;
+}
+
+#experience .career-entry:has(.career-logo-corona) .career-role-heading span::after {
+  content: "October";
+  font-size: .75rem;
+  color: var(--muted);
+}
