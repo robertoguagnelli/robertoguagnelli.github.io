@@ -1,0 +1,109 @@
+/* Shared readable layouts and uncropped media for the portfolio. */
+body{font-size:16px}
+.section{padding-block:60px}
+.eyebrow,.case-section .eyebrow,.hero .eyebrow{font-size:.78rem;letter-spacing:.12em}
+.site-header nav a,.case-nav a,.back-link,.role{font-size:.875rem}
+.hero-footnote,.proof-grid span,.card-metrics span,.card-footer,.project-tags,.year,.tags span,.footer-content,.portrait-frame figcaption{font-size:.82rem}
+.section-heading>p,.career-role p,.career-employer p,.about-grid p,.contact-section p:not(.eyebrow){font-size:1rem}
+.career-role-heading span,.career-role .career-context{font-size:.875rem}
+.projects-grid{align-items:start}
+.project-image,.project-card-wide .project-image{height:auto;min-height:0;overflow:visible}
+.project-image img{width:100%;height:auto;object-fit:contain;transform:none!important}
+.project-card-wide{align-items:center}
+.card-arrow{background:#081a2fcc}
+.portrait,.about-portrait,.field-note img{height:auto;max-height:420px;object-fit:contain}
+.about-portrait{width:150px}
+.field-note{align-items:center}
+.career-with-photo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:26px;align-items:center}
+.career-with-photo figure{margin:0;min-width:0}
+.career-with-photo img{width:100%;height:auto;max-height:350px;object-fit:contain}
+.career-with-photo figcaption{font-size:.875rem;color:var(--muted);padding-top:10px}
+.case-page .case-hero{padding:28px 0 32px}
+.case-page .case-hero h1{margin-bottom:16px}
+.case-page .case-hero h2{margin-bottom:14px}
+.case-page .metrics{padding:22px 0;margin-bottom:24px}
+.case-page .metrics span{font-size:.875rem;line-height:1.5}
+.case-page .case-section{padding:32px 0}
+.case-page .case-section h2{font-size:clamp(1.6rem,2.7vw,2.3rem);margin-bottom:18px}
+.case-page .case-section h3{font-size:1.15rem;margin:0 0 12px}
+.case-page .case-section p:not(.eyebrow),.case-page .case-section li{font-size:1rem;line-height:1.65}
+.case-page .case-section .caption,.case-page figcaption,.case-page caption{font-size:.875rem!important;line-height:1.55;color:var(--muted)}
+.case-page figcaption{padding:10px 0 0!important}
+.case-page .case-section p{margin-bottom:16px}
+.case-page table{font-size:1rem;table-layout:auto}
+.case-page table th,.case-page table td{overflow-wrap:anywhere}
+.case-page figure{margin:0;min-width:0}
+.case-page figure img{display:block;width:auto!important;height:auto!important;max-width:100%!important;max-height:min(480px,calc(100svh - 180px))!important;min-height:0!important;aspect-ratio:auto!important;object-fit:contain!important;object-position:center!important;margin-inline:auto;background:transparent!important;border:0!important}
+.case-page figure a.image-link{display:block}
+.image-link{cursor:zoom-in}
+.image-link:focus-visible{outline:3px solid #448bd0;outline-offset:4px}
+.case-page .latias-intro-visuals,.case-page .wingull-intro-visuals,.hyperion-intro-visuals{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,.8fr);gap:24px;align-items:center;margin-bottom:20px}
+.case-page .latias-intro-visuals img,.case-page .wingull-intro-visuals img,.hyperion-intro-visuals img{max-height:min(420px,calc(100svh - 180px))!important}
+.case-page .latias-intro-visuals figure,.case-page .wingull-intro-visuals figure,.hyperion-intro-visuals figure{order:initial}
+.story-pair,.hp-pair,.case-page .wingull-media-pair,.case-page .latias-media-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;margin:22px 0}
+.story-pair>p{margin:0}
+.story-pair img,.hp-pair img{max-height:380px!important}
+.case-page .hp-gear{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}
+.case-page .hp-gear img{max-height:min(380px,calc(100svh - 180px))!important}
+.hp-decisions,.operations-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:24px 0 0}
+.operations-grid article{border-top:2px solid #779fc4;padding-top:18px}
+.evidence-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:24px 0}
+.case-page .evidence-grid img{width:100%!important}
+.case-page .wingull-test-image{position:static;aspect-ratio:auto;overflow:visible}
+.case-page .wingull-test-image img{position:static;transform:none;max-height:none!important;width:100%!important}
+.case-page #validation .wingull-media-pair{display:block}
+.case-page #validation .wingull-test-photo{margin-top:18px}
+.case-page .latias-principles span,.case-page .latias-process span,.case-page .latias-results span{font-size:.875rem}
+.case-page .latias-principles,.case-page .latias-process{gap:16px}
+.case-page .latias-figure-grid{gap:22px}
+.case-page .retainers{max-width:700px;margin-inline:auto}
+.case-page .retainers img{max-height:220px!important}
+.case-page video{display:block;width:100%;height:auto!important;max-height:min(420px,calc(100svh - 180px))!important;object-fit:contain;background:#10243a}
+.case-page .latias-test-grid article{padding:20px}
+.case-page .latias-wide-figure{margin:0}
+.case-page .case-section#results{padding:26px;margin-block:26px}
+.payload-comparison{margin-top:22px;max-width:790px}
+.payload-comparison p{margin-top:14px}
+.case-page #operations table{margin:22px 0}
+.case-page .case-section ul,.case-page .case-section ol{padding-left:22px}
+@media(max-width:800px){
+ .career-with-photo,.story-pair,.hp-pair,.case-page .wingull-media-pair,.case-page .latias-media-pair{grid-template-columns:1fr;gap:18px}
+ .career-with-photo figure{max-width:520px}
+ .case-page .case-nav{position:static}
+ .hp-decisions,.operations-grid{grid-template-columns:1fr;gap:18px}
+ .case-page .case-section{padding:28px 0}
+ .case-page .latias-test-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .case-page .latias-intro-visuals,.case-page .wingull-intro-visuals,.hyperion-intro-visuals{grid-template-columns:1fr;gap:20px}
+ .case-page .latias-intro-visuals img,.case-page .wingull-intro-visuals img,.hyperion-intro-visuals img{max-height:min(380px,calc(100svh - 180px))!important}
+ .case-page .hp-gear,.evidence-grid{grid-template-columns:1fr}
+ .case-page .retainers{grid-template-columns:1fr 1fr}
+ .site-header nav a{font-size:.8rem}
+ .case-page .case-nav{gap:8px 18px}
+ .case-page .case-nav a{font-size:.875rem}
+ .section{padding-block:42px}
+ .card-footer{flex-wrap:wrap;font-size:.82rem}
+ .proof-grid span{font-size:.78rem}
+ .career-entry{padding:20px 14px}
+ .case-page .case-section#results{padding:20px 16px}
+ .case-page .case-hero .eyebrow{font-size:.75rem}
+ .case-page th,.case-page td{padding:10px 5px}
+ .portrait-frame figcaption{flex-wrap:wrap}
+}
+.eyebrow,.case-section .eyebrow,.hero .eyebrow,.case-page .case-hero .eyebrow{font-size:.875rem}
+.hero-footnote,.field-note figcaption p{font-size:.875rem}
+.role-details article{margin-top:18px}
+.role-details p:last-child{margin-bottom:0}
+.case-page .latias-test-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.case-page .latias-test-grid article{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center}
+.case-page .latias-test-grid article h3{margin-top:0}
+.case-page .latias-test-grid article figure,.case-page .latias-test-grid article video{margin-top:0}
+.case-page .latias-test-grid video{max-height:300px!important}
+.case-page .wingull-media-pair img{max-height:300px!important}
+.case-page #contribution .story-pair img,.case-page .hp-team img{max-height:330px!important}
+@media(max-width:600px){.case-page .latias-test-grid article{grid-template-columns:1fr;gap:14px}}
+.career-with-photo .career-role-heading{display:block}
+.career-with-photo .career-role-heading span{display:block;margin-top:6px;white-space:normal}
+.site-header nav a,.logo{font-size:.875rem}
+.case-page.latias-page .latias-intro-visuals .latias-builder-photo,.case-page.wingull-page .wingull-intro-visuals figure:last-child{order:0}
