@@ -107,3 +107,11 @@ body{font-size:16px}
 .career-with-photo .career-role-heading span{display:block;margin-top:6px;white-space:normal}
 .site-header nav a,.logo{font-size:.875rem}
 .case-page.latias-page .latias-intro-visuals .latias-builder-photo,.case-page.wingull-page .wingull-intro-visuals figure:last-child{order:0}
+.career-role-feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:24px;align-items:center;margin-top:10px}
+.career-role-feature>div{min-width:0}
+.career-role-feature figure{min-width:0;margin:0}
+.career-role-feature figure img{width:100%;height:auto;max-height:310px;object-fit:contain}
+.career-role-feature figcaption{font-size:.875rem;line-height:1.45;color:var(--muted);padding-top:9px}
+.career-role-feature .image-link{display:block}
+.career-role>p + p{margin-top:12px}
+@media(max-width:800px){.career-role-feature{grid-template-columns:1fr;gap:18px}.career-role-feature figure{max-width:680px}}
