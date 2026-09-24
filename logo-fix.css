@@ -1,0 +1,10 @@
+/* Seamless employer-logo treatment on the home page. */
+.career-logo,
+.career-logo-light,
+.career-logo-dark {
+  background: #fff !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  border-radius: 0;
+}
