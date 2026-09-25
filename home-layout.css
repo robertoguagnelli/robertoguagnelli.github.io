@@ -66,15 +66,15 @@
 .home-page .career-expanded figcaption{font-size:.75rem}
 /* Three equally weighted studies with uncropped image frames. */
 .home-page .published-study{padding:18px;display:flex;flex-direction:column;min-width:0}
-.home-page .study-brand{width:84px;height:38px;margin:0 0 10px}
-.home-page .study-brand img{width:100%;height:100%;object-fit:contain;object-position:left center}
+.home-page .study-brand{width:120px;height:62px;margin:0 0 10px;display:flex;align-items:center;justify-content:flex-start}
+.home-page .study-brand img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:left center;aspect-ratio:auto}
 .home-page .published-study .study-number{font-size:.65rem;letter-spacing:.06em;line-height:1.4;min-height:1.4em}
 .home-page .published-study h3{font-size:1.25rem;line-height:1.2;margin:9px 0;min-height:2.4em}
 .home-page .published-study>p.study-deck{font-size:.875rem;line-height:1.45;min-height:4.35em}
 .home-page .study-hero-media{margin:12px 0 0;padding:8px;gap:6px;min-height:0;align-content:start}
-.home-page .study-hero-media>a{height:145px;width:100%;min-width:0;overflow:hidden}
+.home-page .study-hero-media>a{height:155px;width:100%;min-width:0;overflow:hidden;background:#fff}
 .home-page .study-bic-media>a,.home-page .study-cad-media>a{width:calc(50% - 3px)}
-.home-page .study-hero-media img{display:block;width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;flex-shrink:1}
+.home-page .study-hero-media img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;aspect-ratio:auto}
 .home-page .study-hero-media figcaption{font-size:.75rem;line-height:1.35;margin-top:4px;min-height:2.7em}
 .home-page .study-highlights{margin-top:12px;gap:12px}
 .home-page .study-highlights>div{padding-top:10px}
@@ -107,7 +107,7 @@
 @media(min-width:1101px) and (max-height:800px){
  .home-page .section{padding-block:26px}
  .home-page .section-heading{margin-bottom:18px}
- .home-page .study-hero-media>a{height:115px}
+ .home-page .study-hero-media>a{height:125px}
  .home-page .career-thumbnail img{height:90px}
  .home-page .career-brief+.career-brief{margin-top:10px;padding-top:10px}
 }
