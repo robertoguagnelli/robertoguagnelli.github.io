@@ -161,3 +161,77 @@
  .home-page .contact-actions{flex-direction:row;flex-wrap:wrap}
  .home-page .contact-actions .button{padding:10px 13px;gap:12px;font-size:.8rem}
 }
+
+/* Final media proportion guard: never stretch logos or experience photography. */
+.home-page .career-logo{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ height:auto;
+ min-height:58px;
+ padding:5px;
+ overflow:hidden;
+ background:#fff;
+}
+.home-page .career-logo img{
+ display:block!important;
+ width:auto!important;
+ height:auto!important;
+ max-width:100%!important;
+ max-height:56px!important;
+ object-fit:contain!important;
+ object-position:center!important;
+ aspect-ratio:auto!important;
+ transform:none!important;
+ margin:auto;
+}
+.home-page .career-thumbnail figure,
+.home-page .career-expanded figure{
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ width:100%;
+}
+.home-page .career-thumbnail img,
+.home-page .career-expanded figure img{
+ display:block!important;
+ width:auto!important;
+ height:auto!important;
+ max-width:100%!important;
+ max-height:140px!important;
+ object-fit:contain!important;
+ object-position:center!important;
+ aspect-ratio:auto!important;
+ margin-inline:auto;
+ background:transparent;
+}
+.home-page .career-expanded figure img{max-height:220px!important}
+.home-page .study-brand{
+ width:auto;
+ height:auto;
+ min-height:56px;
+ max-width:150px;
+ margin:0 0 10px;
+ display:flex;
+ align-items:center;
+ justify-content:flex-start;
+ overflow:visible;
+}
+.home-page .study-brand img{
+ display:block!important;
+ width:auto!important;
+ height:auto!important;
+ max-width:150px!important;
+ max-height:56px!important;
+ object-fit:contain!important;
+ object-position:left center!important;
+ aspect-ratio:auto!important;
+ transform:none!important;
+}
+@media(max-width:600px){
+ .home-page .career-logo{width:72px;min-height:62px}
+ .home-page .career-employer{grid-template-columns:72px minmax(0,1fr)}
+ .home-page .career-thumbnail img{max-height:180px!important}
+ .home-page .study-brand{max-width:145px;min-height:54px}
+ .home-page .study-brand img{max-width:145px!important;max-height:54px!important}
+}
