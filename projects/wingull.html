@@ -6,7 +6,25 @@
 <title>Wingull 2025 | Roberto Guagnelli</title>
 <meta name="description" content="Aircraft design, removable wing joints and structural testing, developed from concept to flight.">
 <link rel="stylesheet" href="../style.css?v=20260923-wingull">
-<link rel="stylesheet" href="../portfolio-refinement.css?v=20260924-photos"></head>
+<link rel="stylesheet" href="../portfolio-refinement.css?v=20260924-photos"><style>
+#airfoil-selection .trade-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:1.5rem 0}
+#airfoil-selection .trade-grid>*{min-width:0}
+#airfoil-selection .trade-card{padding:1.5rem;border:1px solid #dce4ee;border-radius:12px;background:#f5f8fc}
+#airfoil-selection .trade-card h3{margin-top:0}
+#airfoil-selection table{width:100%;table-layout:fixed}
+#airfoil-selection th,#airfoil-selection td{overflow-wrap:anywhere}
+#airfoil-selection .trade-score{display:flex;justify-content:space-between;gap:1rem;margin-top:1rem;font-size:.92rem}
+#airfoil-selection .trade-bar{height:8px;background:#dce4ee;border-radius:8px;margin-top:.4rem}
+#airfoil-selection .trade-bar span{display:block;height:100%;background:#7189aa;border-radius:8px}
+#airfoil-selection .trade-bar .trade-winner{background:#163e68}
+#airfoil-selection .trade-note{font-size:.9rem;color:#526277}
+#airfoil-selection details{border:1px solid #dce4ee;border-radius:10px;padding:1rem}
+#airfoil-selection summary{cursor:pointer;font-weight:600;color:#163e68}
+#airfoil-selection details figure{margin:1rem 0 0}
+#airfoil-selection details img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+@media(max-width:720px){#airfoil-selection .trade-grid{grid-template-columns:1fr;gap:1rem}#airfoil-selection .trade-card{padding:1rem}}
+</style>
+</head>
 <body class="case-page wingull-page">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
@@ -53,6 +71,7 @@
 <a href="#contribution">My role</a>
 <a href="#design">Design</a>
 <a href="#validation">Testing</a>
+<a href="#airfoil-selection">Airfoil selection</a>
 <a href="#analysis">Analysis</a>
 <a href="#operations">Operations</a><a href="#results">Results</a>
 </nav>
@@ -92,6 +111,30 @@
 <div><p>We inverted the complete wing and applied 18 kg of distributed mass according to a Schrenk-based spanwise loading plan. This was 1.5 times the 12 kg design mass under the corresponding static load comparison.</p><p>The test checked the assembled wing at the planned load. We did not test it to failure, so it does not establish the ultimate failure load or a quantified deflection error.</p></div>
 <figure class="wingull-test-photo"><div class="wingull-test-image"><a href="../images/portfolio/wingull-load-test-horizontal.webp" target="_blank" rel="noopener" class="image-link" aria-label="Open full-size image: Inverted Wingull wing with distributed weights attached along the span during the 18 kg test"><img src="../images/portfolio/wingull-load-test-horizontal.webp" width="1280" height="315" loading="lazy" decoding="async" alt="Inverted Wingull wing with distributed weights attached along the span during the 18 kg test"></a></div><figcaption>Full-wing distributed-load test · 18 kg applied.</figcaption></figure>
 </div>
+</section>
+<section class="case-section" id="airfoil-selection" aria-labelledby="airfoil-title">
+<p class="eyebrow">AERODYNAMIC DESIGN / XFLR5</p>
+<h2 id="airfoil-title">Airfoil Selection Trade Study</h2>
+<p>We compared 15 candidate airfoils in XFLR5 to select the profile best suited to Wingull's aerodynamic requirements. A weighted decision matrix translated mission priorities into a consistent comparison of lift, drag and pitching moment.</p>
+<div class="trade-grid">
+<article class="trade-card"><h3>Requirements and priorities</h3>
+<p>The study used a target stall speed of 11 m/s, a cruise speed of 15 m/s and wing loadings of 80–120 N/m² to define required lift coefficients: 1.86–2.80 at stall and 1.00–1.50 in cruise.</p>
+<table><caption>Weights from the pairwise importance matrix</caption><thead><tr><th scope="col">Criterion</th><th scope="col">Weight</th></tr></thead><tbody>
+<tr><th scope="row">Maximum lift, C<sub>l,max</sub></th><td>40%</td></tr>
+<tr><th scope="row">Lift at zero angle, C<sub>l,α=0</sub></th><td>25%</td></tr>
+<tr><th scope="row">Pitching moment, C<sub>m,α=0</sub></th><td>20%</td></tr>
+<tr><th scope="row">Minimum drag, C<sub>d,min</sub></th><td>15%</td></tr>
+</tbody></table><p class="trade-note">Maximum lift-to-drag ratio was also compared, but carried 0% weight in the final score.</p></article>
+<article class="trade-card"><h3>S1223 ranked first</h3>
+<p><strong>77.94 / 100</strong> · highest weighted score among 15 candidates.</p>
+<p>Normalized aerodynamic values were combined using the stated weights. S1223 provided the strongest overall result for this set of priorities, with a predicted C<sub>l,max</sub> of 2.335 and C<sub>l,α=0</sub> of 1.184.</p>
+<div class="trade-score"><span>S1223</span><strong>77.94</strong></div><div class="trade-bar" aria-hidden="true"><span class="trade-winner" style="width:77.94%"></span></div>
+<div class="trade-score"><span>S1223RTL</span><strong>76.73</strong></div><div class="trade-bar" aria-hidden="true"><span class="" style="width:76.73%"></span></div>
+<div class="trade-score"><span>FX74CL5140MOD</span><strong>75.45</strong></div><div class="trade-bar" aria-hidden="true"><span class="" style="width:75.45%"></span></div>
+<div class="trade-score"><span>CH104813</span><strong>75.28</strong></div><div class="trade-bar" aria-hidden="true"><span class="" style="width:75.28%"></span></div>
+<p class="trade-note">Top four candidates · weighted score on a 0–100 scale. S1223 led S1223RTL by 1.21 points; the ranking reflects this matrix's chosen weights.</p></article>
+</div>
+<details><summary>View the complete 15-airfoil comparison matrix</summary><figure><a href="../images/wingull/airfoil-trade-study.png" target="_blank" rel="noopener" aria-label="Open the original airfoil comparison matrix at full size"><img src="../images/wingull/airfoil-trade-study.png" width="1340" height="597" loading="lazy" decoding="async" alt="Original Wingull airfoil trade study: mission requirements, pairwise criteria weighting and XFLR5 values for 15 candidates; S1223 scores 77.94 out of 100."></a><figcaption>Original trade-study worksheet. Aerodynamic coefficients were obtained from XFLR5 analyses; scores reflect the selected criteria and weights. Open the image for full-size detail.</figcaption></figure></details>
 </section>
 <section class="case-section" id="analysis">
 <p class="eyebrow">03 / ANALYSIS TO FLIGHT</p>
