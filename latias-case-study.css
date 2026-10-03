@@ -5,3 +5,6 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 /* Keep the CG annotation independent from the site's dark footer styling. */
 .latias-study .ls-cg footer{color:var(--ink);padding-bottom:0;margin:0}
+
+.ls-team-photo{max-width:760px;margin:26px auto 0}.ls-team-photo img{max-height:570px;object-fit:contain}.ls-team-photo figcaption{text-align:left}
+@media(max-width:650px){.ls-team-photo{margin-top:22px}.ls-team-photo img{max-height:none}}
