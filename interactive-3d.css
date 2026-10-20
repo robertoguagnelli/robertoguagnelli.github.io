@@ -21,3 +21,28 @@
 .video-view-sources li span{white-space:nowrap;color:var(--muted)}
 @media(max-width:720px){.video-view-sources{scroll-margin-top:140px}.video-view-sources li{flex-direction:column;gap:3px}.digital-home-facts{gap:12px 16px}}
 @media(max-width:380px){.digital-home-facts{grid-template-columns:1fr}}
+
+/* Project media: uncluttered Alien Forest photos, real publication marks and click-to-play video. */
+.alien-photo-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:24px 0 38px}
+.alien-photo-gallery .zoom-image{height:235px;background:#e3ebee;padding:16px}
+.press-list a{grid-template-columns:120px 1fr auto;align-items:center;gap:3px 18px;min-height:90px}
+.press-list .press-logo{grid-column:1;grid-row:1/3;width:120px;height:55px;display:flex;align-items:center;justify-content:center}
+.press-logo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.press-list a>strong{grid-column:2;align-self:end}
+.press-list a>span:not(.press-logo):first-of-type{grid-column:2}
+.press-list a>span:nth-last-child(2){grid-column:2;font-size:.72rem;color:var(--muted);align-self:start}
+.press-list a>span:last-child{grid-column:3;grid-row:1/3}
+.video-project-group{margin-top:38px}.video-project-group>h3{font-size:1.55rem;margin-bottom:10px}.video-project-group>p{font-size:.86rem;margin-bottom:22px}
+.project-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 20px}
+.project-video-card{background:#fff;border:1px solid var(--border);min-width:0}
+.video-launch{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;background:var(--navy);cursor:pointer;overflow:hidden}
+.video-launch img{display:block;width:100%;height:100%;object-fit:cover}
+.video-launch:focus-visible{outline:3px solid #448bd0;outline-offset:4px}
+.video-play-icon{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:54px;height:40px;border-radius:9px;background:#081a2fe8;color:#fff;font-size:20px;padding-left:3px;box-shadow:0 2px 15px #0004}
+.video-launch:hover .video-play-icon{background:#245a89}
+.video-card-copy{padding:17px}.video-card-copy h4{font-size:.88rem;line-height:1.4;color:var(--navy);font-weight:600}.video-card-copy p{font-size:.75rem;margin:8px 0 12px}.video-card-copy a{font-size:.75rem;color:var(--blue);border-bottom:1px solid #bbcedd}
+.video-dialog{margin:auto;border:0;background:#f2f5f8;width:min(1050px,94vw);max-height:94vh;overflow:auto;padding:55px 24px 22px}
+.video-dialog::backdrop{background:#061423e8}.video-dialog h3{font-size:1.1rem;margin:0 0 16px;line-height:1.3}.video-player-frame{aspect-ratio:16/9;background:#081a2f}.video-player-frame iframe{width:100%;height:100%;display:block;border:0}.video-external-link{display:inline-block;font-size:.8rem;color:var(--blue);margin-top:15px}
+@media(max-width:1000px){.project-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.press-block{grid-template-columns:1fr}.press-list{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}.press-list a:last-child{border-bottom:0}}
+@media(max-width:720px){.alien-photo-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.alien-photo-gallery .zoom-image{height:190px;padding:10px}.press-list{grid-template-columns:1fr}.press-list a{grid-template-columns:100px 1fr auto}.press-list .press-logo{width:100px;height:50px}.project-video-grid{gap:18px 12px}.video-card-copy{padding:13px}.video-dialog{padding:52px 12px 18px}.video-dialog h3{font-size:.95rem}}
+@media(max-width:480px){.project-video-grid{grid-template-columns:1fr}.alien-photo-gallery .zoom-image{height:160px}}
