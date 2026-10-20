@@ -46,3 +46,7 @@
 @media(max-width:1000px){.project-video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.press-block{grid-template-columns:1fr}.press-list{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}.press-list a:last-child{border-bottom:0}}
 @media(max-width:720px){.alien-photo-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.alien-photo-gallery .zoom-image{height:190px;padding:10px}.press-list{grid-template-columns:1fr}.press-list a{grid-template-columns:100px 1fr auto}.press-list .press-logo{width:100px;height:50px}.project-video-grid{gap:18px 12px}.video-card-copy{padding:13px}.video-dialog{padding:52px 12px 18px}.video-dialog h3{font-size:.95rem}}
 @media(max-width:480px){.project-video-grid{grid-template-columns:1fr}.alien-photo-gallery .zoom-image{height:160px}}
+
+/* Original Terror wing animation, converted from the supplied animated GIF. */
+.terror-loop{display:block;width:100%;height:410px;object-fit:contain;background:#e8f0f1}
+@media(max-width:720px){.terror-loop{height:300px}}
