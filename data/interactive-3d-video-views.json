@@ -79,7 +79,7 @@
       ]
     },
     "hello-kitty": {
-      "total_views": 2875965,
+      "total_views": 3516820,
       "videos": [
         {
           "id": "UtyX3vJS2Jg",
@@ -94,8 +94,33 @@
           "channel": "Minecraft",
           "views": 2153472,
           "url": "https://www.youtube.com/watch?v=IZCFqFUEEs4"
+        },
+        {
+          "id": "lQkqCbD5xjA",
+          "title": "Minecraft x Hello Kitty and Friends - Official DLC Trailer",
+          "channel": "Razzleberries",
+          "channel_id": "UCIhWAKpp5gpN8Edh21bSRoQ",
+          "views": 1736,
+          "url": "https://www.youtube.com/watch?v=lQkqCbD5xjA"
+        },
+        {
+          "id": "yhB7mqeHj2M",
+          "title": "Minecraft - Hello Kitty and Friends Furniture Add-on Trailer | PS5 & PS4 Games",
+          "channel": "PlayStation",
+          "channel_id": "UC-2Y8dQb0S6DtpxNgAKoJKA",
+          "views": 18711,
+          "url": "https://www.youtube.com/watch?v=yhB7mqeHj2M"
+        },
+        {
+          "id": "3Zl6nbD3-Cg",
+          "title": "Minecraft x Hello Kitty® and Friends DLC",
+          "channel": "Minecraft",
+          "channel_id": "UC1sELGmy5jp5fQUugmuYlXQ",
+          "views": 620408,
+          "url": "https://www.youtube.com/watch?v=3Zl6nbD3-Cg"
         }
-      ]
+      ],
+      "scope": "Relevant DLC and Furniture Add-On uploads from the official Minecraft, Razzleberries and PlayStation channels; unique video IDs counted once."
     }
   }
 }
