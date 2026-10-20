@@ -1,0 +1,101 @@
+{
+  "checked_on": "2026-10-20",
+  "source": "Public YouTube videoDetails.viewCount",
+  "aggregation": "Sum of linked video view counts; not unique viewers",
+  "projects": {
+    "bloodborne": {
+      "total_views": 2605520,
+      "videos": [
+        {
+          "id": "vsmWQz2lhzA",
+          "title": "We Made Bloodborne in Minecraft and here's our current mod!",
+          "channel": "Potomy",
+          "views": 224924,
+          "url": "https://www.youtube.com/watch?v=vsmWQz2lhzA"
+        },
+        {
+          "id": "EMAHHL9kIEw",
+          "title": "We made a Bloodborne x Minecraft mod Trailer",
+          "channel": "Potomy",
+          "views": 21992,
+          "url": "https://www.youtube.com/watch?v=EMAHHL9kIEw"
+        },
+        {
+          "id": "F6NJa_GhUqs",
+          "title": "Bloodborne: Cinematic Animation Film",
+          "channel": "Potomy",
+          "views": 96013,
+          "url": "https://www.youtube.com/watch?v=F6NJa_GhUqs"
+        },
+        {
+          "id": "a63UAhVW6BE",
+          "title": "We Made Bloodborne In Minecraft  | UPDATE Part 2",
+          "channel": "Potomy",
+          "views": 140559,
+          "url": "https://www.youtube.com/watch?v=a63UAhVW6BE"
+        },
+        {
+          "id": "Wik8COe7CK4",
+          "title": "We're creating a Bloodborne Mod in Minecraft!",
+          "channel": "Potomy",
+          "views": 235260,
+          "url": "https://www.youtube.com/watch?v=Wik8COe7CK4"
+        },
+        {
+          "id": "i34IQMzCZWA",
+          "title": "I Built Bloodborne in Minecraft",
+          "channel": "Potomy",
+          "views": 834345,
+          "url": "https://www.youtube.com/watch?v=i34IQMzCZWA"
+        },
+        {
+          "id": "NBR6UOKmEdg",
+          "title": "Minecraft: Fear the Old Blood | Cinematic Trailer",
+          "channel": "Potomy",
+          "views": 130908,
+          "url": "https://www.youtube.com/watch?v=NBR6UOKmEdg"
+        },
+        {
+          "id": "BlGtw3RIerQ",
+          "title": "The Mod Minecraft Couldn't Handle",
+          "channel": "Potomy",
+          "views": 918970,
+          "url": "https://www.youtube.com/watch?v=BlGtw3RIerQ"
+        },
+        {
+          "id": "NNrgATsy2PQ",
+          "title": "Cleric Beast Model Showcase \"Bloodborne x Minecraft\"",
+          "channel": "RguagnelliG",
+          "views": 1654,
+          "url": "https://www.youtube.com/watch?v=NNrgATsy2PQ"
+        },
+        {
+          "id": "xjkpJIuGYzo",
+          "title": "Executioner Model Showcase \"Bloodborne x Minecraft\"",
+          "channel": "RguagnelliG",
+          "views": 895,
+          "url": "https://www.youtube.com/watch?v=xjkpJIuGYzo"
+        }
+      ]
+    },
+    "hello-kitty": {
+      "total_views": 2875965,
+      "videos": [
+        {
+          "id": "UtyX3vJS2Jg",
+          "title": "Minecraft x Hello Kitty and Friends Furniture Add-on",
+          "channel": "Minecraft",
+          "views": 722493,
+          "url": "https://www.youtube.com/watch?v=UtyX3vJS2Jg"
+        },
+        {
+          "id": "IZCFqFUEEs4",
+          "title": "Minecraft x Hello Kitty® and Friends DLC",
+          "channel": "Minecraft",
+          "views": 2153472,
+          "url": "https://www.youtube.com/watch?v=IZCFqFUEEs4"
+        }
+      ]
+    }
+  }
+}
