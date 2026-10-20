@@ -1,10 +1,11 @@
-% Compile with pdfLaTeX. One column; searchable text; no external assets.
-% General engineering CV for professional applications.
+% Roberto Guagnelli Garcia | general mechanical and aerospace engineering CV
+% Source for the portfolio PDF; compile with pdfLaTeX.
+% Single column, selectable text, no external assets or nonstandard fonts.
 \documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
-\usepackage[left=0.5in,right=0.5in,top=0.48in,bottom=0.48in]{geometry}
+\usepackage[left=0.58in,right=0.58in,top=0.47in,bottom=0.47in]{geometry}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{microtype}
@@ -17,71 +18,73 @@
 \hyphenpenalty=10000
 \exhyphenpenalty=10000
 \raggedright
-\setlist[itemize]{leftmargin=13pt,labelsep=5pt,topsep=2pt,itemsep=1pt,parsep=0pt,partopsep=0pt}
-\newcommand{\cvsection}[1]{\vspace{8pt}{\large\bfseries #1}\par\vspace{1pt}\hrule\vspace{4pt}}
-\newcommand{\entry}[2]{#1\hfill #2\par}
+\setlist[itemize]{leftmargin=13pt,labelsep=5pt,topsep=1pt,itemsep=0.45pt,parsep=0pt,partopsep=0pt}
+\newcommand{\cvsection}[1]{\vspace{5pt}{\normalsize\bfseries #1}\par\vspace{1pt}\hrule\vspace{3pt}}
+\newcommand{\entry}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\role}[2]{\textit{#1}\hfill \textit{#2}\par}
 \begin{document}
-{\Large\bfseries ROBERTO GUAGNELLI GARCÍA}\par
+{\LARGE\bfseries ROBERTO GUAGNELLI GARCÍA}\par
 \vspace{2pt}
 {\small +52 55 4976 5729 $|$ \href{mailto:robguagnelli@gmail.com}{robguagnelli@gmail.com} $|$ Querétaro, Mexico}\par
-{\small \href{https://www.linkedin.com/in/roberto-guagnelli-garcia/}{linkedin.com/in/roberto-guagnelli-garcia} $|$ Portfolio: \href{https://robertoguagnelli.github.io/}{robertoguagnelli.github.io}}\par
+{\small \href{https://www.linkedin.com/in/roberto-guagnelli-garcia/}{linkedin.com/in/roberto-guagnelli-garcia} $|$ \href{https://robertoguagnelli.github.io/}{robertoguagnelli.github.io}}\par
 \vspace{3pt}
-\textbf{Mechanical Engineering Student $|$ Overall Aircraft Design \& Systems Integration}
-
-{\small Spanish \& Mexican citizen $|$ EU work authorization $|$ Open to relocation}\par
+\textbf{Mechanical Engineering $|$ Aerospace Concentration $|$ Mechanical Design, Analysis \& Manufacturing}\par
+{\small Spanish and Mexican citizen $|$ Authorized to work in the EU $|$ Available after July 2027; open to relocation}\par
 
 \cvsection{EDUCATION}
-\entry{\textbf{Tecnológico de Monterrey}, Campus Estado de México}{Expected Jul 2027}
-B.S. in Mechanical Engineering; Concentration in Aeronautics\par
-\textbf{Academic average: 91/100}
+\entry{Tecnológico de Monterrey, Campus Estado de México}{Expected Jul 2027}
+B.S. Mechanical Engineering, Concentration in Aeronautics $|$ \textbf{Academic average: 91/100}
 
-\cvsection{WORK EXPERIENCE}
-\entry{\textbf{GE Aerospace} $|$ Designer Intern, Product Definition}{Aug 2026 -- Present}
+\cvsection{PROFESSIONAL EXPERIENCE}
+\entry{GE Aerospace $|$ Designer Intern, Product Definition}{Aug 2026 -- Present}
 \textit{RISE Open Fan Program}
 \begin{itemize}
-\item Design brackets and harness routing in Siemens NX: 70+ brackets and 20+ routing revisions, applying manufacturing and maintainability criteria.
-\item Resolve clearance, interference and minimum bend radius issues through harness routing and support-bracket revisions.
-\item Prepare product definition drawings and tolerance tables using established datums for brackets and harnesses.
+\item Developed 70+ support brackets and completed 20+ harness-routing revisions in Siemens NX, considering manufacturability, installation and maintainability.
+\item Resolved mechanical interfaces involving clearances, interferences and minimum cable bend radii; prepared product-definition drawings and datum-based tolerance tables.
 \end{itemize}
-
-\vspace{3pt}
-\entry{\textbf{GE Aerospace} $|$ Lean Summer Experience Intern}{Jun 2026 -- Jul 2026}
+\vspace{2pt}
+\entry{GE Aerospace $|$ Lean Summer Experience Intern}{Jun 2026 -- Jul 2026}
 \textit{Integrated Performance \& Operability (IP\&O)}
 \begin{itemize}
-\item Implemented visual planning and KPI dashboards with program leads; reduced meeting duration by 20\%, as timed by meeting leaders.
+\item Implemented visual planning and KPI dashboards with program leads; meeting leaders measured approximately 20\% shorter meetings. Supported process automation in Python.
 \end{itemize}
 
-\cvsection{ENGINEERING PROJECTS \& LEADERSHIP}
-\entry{\textbf{Borregos CEM AeroDesign} $|$ Tecnológico de Monterrey}{Sep 2023 -- Present}
-\entry{\textit{Engineering \& Leadership Advisor}}{Sep 2026 -- Present}
+\cvsection{ENGINEERING LEADERSHIP \& SELECTED PROJECTS}
+\entry{Borregos CEM AeroDesign $|$ Tecnológico de Monterrey}{Sep 2023 -- Present}
+\role{Design Captain / Engineering Coordinator (now Engineering \& Leadership Advisor)}{Aug 2024 -- Present}
 \begin{itemize}
-\item Mentor the incoming Design Captain and advise engineering groups and team leadership.
+\item Led five designers and coordinated aircraft integration across a 40+ member team. Personally modeled 300+ CAD parts per aircraft within assemblies of 400+ components, from structures and mechanisms to systems installation.
+\item \textbf{Wingull (2025):} Designed removable joints for a 4.2 m wing under a 1.2 m transport limit; supported an 18 kg distributed-load test. The aircraft completed payload-carrying flight.
+\item \textbf{Latías (2026):} Developed longitudinal flight-dynamics models using Python and XFLR5, with stability derivatives, state-space eigenvalues, phugoid/short-period analysis and a revised loaded-CG target to recover modeled stability.
 \end{itemize}
-\vspace{3pt}
-\entry{\textit{Engineering Coordinator / Design Captain}}{Aug 2024 -- Sep 2026}
+\vspace{2pt}
+\role{Manufacturing Coordinator $|$ Hyperion}{Sep 2023 -- Aug 2024}
 \begin{itemize}
-\item Led 5 designers and coordinated aircraft integration across a 40+ member team; documented requirements and conducted multidisciplinary reviews.
-\item Resolved a structural/electrical interface conflict by coordinating geometry and cable-passage changes.
-\item Modeled 300+ CAD parts per aircraft in 400+ component assemblies; evaluated mass, CG, stability and propulsion trade-offs.
-\item Designed removable joints for Wingull\textquotesingle s 4.2 m wing, keeping components under 1.2 m; supported its 18 kg distributed-load test.
-\item Used steady/transient CFD and XFLR5/AVL to assess aerodynamics, stability, trim and control authority; applied drag results to takeoff and payload estimates.
+\item Coordinated eight builders; designed and fabricated spring-loaded aluminum nose landing gear, fitted carbon-fiber skin and introduced an assembly spacer to correct rib misalignment.
+\item Supported six competition flights; demonstrated 3 kg payload. The team achieved \textbf{2nd overall} and \textbf{3rd in design report} at SAE Aero Design México 2024.
+\end{itemize}
+\vspace{2pt}
+\entry{Computational Aerodynamics $|$ Individual Engineering Study}{2026}
+\begin{itemize}
+\item Built a 3D wing CFD workflow in ANSYS Fluent (geometry, mesh, SST $k$--$\omega$, steady/transient solving and post-processing); compared aerodynamic trends with XFLR5 and used findings to guide wing incidence and tip-design decisions.
+\end{itemize}
+\vspace{2pt}
+\entry{Extruder Screw Failure Analysis $|$ Academic Team Project}{2026}
+\begin{itemize}
+\item Investigated a fractured tool-steel extrusion screw using hardness testing, metallography, SEM/EDS and torsional stress calculations; evaluated competing failure hypotheses against physical evidence.
 \end{itemize}
 
-\vspace{3pt}
-\entry{\textit{Manufacturing Coordinator $|$ Hyperion}}{Sep 2023 -- Aug 2024}
+\cvsection{ADDITIONAL DIGITAL PRODUCTION EXPERIENCE}
+\entry{3D Asset Development \& Interactive Content $|$ Selected Collaborations}{2020 -- 2026}
 \begin{itemize}
-\item Coordinated 8 members in fabrication, assembly and quality control; designed and built a spring-loaded aluminum nose gear for limited propeller clearance.
-\item Helped build Hyperion: 6 competition flights with 3 kg payload at 4 kg empty mass; 2nd overall and 3rd in design report at SAE Aero Design México 2024.
+\item Created \textbf{100+} 3D models and textures for Razzleberries' licensed \textit{Hello Kitty and Friends} Minecraft content, following brand guidelines; produced \textbf{25+} detailed characters/variants for an independent Bloodborne-inspired project.
+\item Developed Minecraft Bedrock entities, animation behaviors and interactive mechanics using Blockbench, Blender and JSON-based configurations for additional projects.
 \end{itemize}
 
-\cvsection{TECHNICAL SKILLS}
+\cvsection{TECHNICAL SKILLS \& CERTIFICATIONS}
 {\small
-\textbf{CAD \& Analysis:} Siemens NX, SolidWorks, Fusion 360, ANSYS Fluent, XFLR5, AVL; steady-state and transient CFD.\par
-\textbf{Programming \& Data:} Python, MATLAB, Excel, Power BI.\par
-\textbf{Aircraft \& Systems:} Aircraft design, systems integration, CG, propulsion selection, requirements, interfaces, verification/testing.\par
-\textbf{Stability \& Control:} Static stability, trim, control derivatives and control authority using AVL/XFLR5.\par
-\textbf{Manufacturing:} 3D printing, carbon-fiber fabrication, laser cutting, aluminum welding, tube and sheet bending.\par
-\textbf{Certification:} Certified SOLIDWORKS Professional (CSWP), perfect exam score.\par
-\textbf{Languages:} Spanish (native), English (C2; Cambridge and IELTS), German (currently learning at A2 level).
+\textbf{CAD \& analysis:} Siemens NX, SOLIDWORKS, Fusion 360, ANSYS Fluent, XFLR5, AVL; assemblies, drawings, CFD, flight dynamics.\par
+\textbf{Programming \& manufacturing:} Python, MATLAB, Excel, Power BI, JSON; composites, 3D printing, laser cutting, forming, aluminum welding.\par
+\textbf{Additional:} Blender, Blockbench $|$ \textbf{CSWP certification} $|$ Spanish (native), English (C2; IELTS 8.5), German (A2).\par
 }
 \end{document}
