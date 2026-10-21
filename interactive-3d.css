@@ -105,3 +105,14 @@
 @media(max-width:720px){.world-showcase{margin-bottom:29px;padding-top:18px}.world-showcase-heading{margin-bottom:13px}.world-showcase-heading h3{font-size:1.4rem}.world-carousel-track{gap:11px}.world-carousel-slide{flex-basis:82vw}.world-carousel-slide .zoom-image{height:clamp(156px,48vw,205px)}.world-carousel-slide figcaption{padding:9px 11px;min-height:42px;font-size:.68rem}.world-carousel-project{font-size:.61rem}.world-carousel-arrow{width:32px;height:32px}.world-carousel-count{min-width:50px;margin-right:3px;font-size:.68rem}.world-carousel-scrubber{gap:12px;margin-top:15px}.world-carousel-scrubber label{font-size:.66rem;white-space:nowrap}.world-carousel-hint{font-size:.67rem}}
 @media(max-width:410px){.world-carousel-scrubber label{display:none}.world-carousel-slide{flex-basis:86vw}}
 @media(prefers-reduced-motion:reduce){.world-carousel-track{scroll-behavior:auto}}
+
+/* Additional projects: four models in one continuous row. */
+.additional-worlds>h3{font-size:1.5rem;margin-bottom:24px}
+.additional-project-copy{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:24px}
+.additional-project-copy h3{font-size:1.25rem;margin-bottom:14px}
+.additional-project-copy p{font-size:.87rem}
+.additional-project-copy .eyebrow{font-size:.67rem}
+.additional-model-gallery{display:grid;grid-template-columns:repeat(4,minmax(160px,1fr));gap:20px;overflow-x:auto;padding-bottom:16px}
+.additional-model-gallery .zoom-image{height:220px}
+.additional-model-gallery:focus-visible{outline:3px solid #448bd0;outline-offset:4px}
+@media(max-width:720px){.additional-project-copy{grid-template-columns:1fr;gap:22px}.additional-model-gallery{gap:14px}.additional-model-gallery .zoom-image{height:180px}}
