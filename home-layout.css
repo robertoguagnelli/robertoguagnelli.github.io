@@ -39,6 +39,8 @@
 .home-page .experience-card{padding:24px 26px;background:#fff;border:1px solid #d9e1e8;border-radius:5px;min-width:0}
 .home-page .employer-heading{display:flex;align-items:center;gap:14px;margin-bottom:20px;min-height:50px}
 .home-page .employer-heading>img{width:52px;height:48px;object-fit:contain;flex-shrink:0}
+/* GE artwork has a wide canvas and a 1073px circle within its 1125px height. */
+.home-page .employer-heading>img.ge-emblem{object-fit:cover;object-position:center;transform:scale(1.0485)}
 .home-page .employer-heading h3{font-size:1.23rem;line-height:1.3}
 .home-page .employer-heading p{font-size:.73rem;line-height:1.5;margin-top:4px}
 .home-page .experience-card>p{font-size:.9rem;line-height:1.6}
