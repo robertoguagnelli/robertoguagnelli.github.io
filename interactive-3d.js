@@ -51,78 +51,181 @@
   });
 })();
 
-/* A progressive gallery: existing site photos are usable while additional user-supplied photos are being published. */
+/* Seamless, low-height photo belt with a user-controlled seek bar. */
 (() => {
   const track = document.querySelector('[data-world-track]');
-  if (!track) return;
-  const prev = document.querySelector('[data-world-prev]');
-  const next = document.querySelector('[data-world-next]');
+  const range = document.querySelector('[data-world-progress]');
+  const previousButton = document.querySelector('[data-world-prev]');
+  const nextButton = document.querySelector('[data-world-next]');
   const current = document.querySelector('[data-world-current]');
   const total = document.querySelector('[data-world-total]');
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let selected = 0;
-  const slides = () => Array.from(track.querySelectorAll('.world-carousel-slide'));
+  if (!track || !range || !previousButton || !nextButton || !current || !total) return;
 
-  function sync() {
-    const items = slides();
-    if (!items.length) return;
-    const bounds = track.getBoundingClientRect();
-    let nearest = 0;
-    let distance = Infinity;
-    items.forEach((item, index) => {
-      const d = Math.abs(item.getBoundingClientRect().left - bounds.left);
-      if (d < distance) { distance = d; nearest = index; }
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const imageDialog = document.querySelector('.image-dialog');
+  const speed = 37; // Pixels per second: constant, continuous movement.
+  const idleDelay = 5000; // Resume five seconds after the last manual interaction.
+  let originals = [];
+  let after = [];
+  let cycleWidth = 0;
+  let fraction = 0;
+  let pauseUntil = 0;
+  let pointerHeld = false;
+  let inView = true;
+  let lastFrame = null;
+
+  function pauseForInteraction() {
+    pauseUntil = performance.now() + idleDelay;
+  }
+
+  function modulo(value, period) {
+    return ((value % period) + period) % period;
+  }
+
+  function updatePosition() {
+    if (!cycleWidth || !originals.length) return;
+    const oldPosition = track.scrollLeft;
+    const logical = modulo(oldPosition - cycleWidth, cycleWidth);
+    const normalized = cycleWidth + logical;
+    // The three identical image sets make this reset visually invisible.
+    if (oldPosition < cycleWidth || oldPosition >= 2 * cycleWidth) {
+      track.scrollLeft = normalized;
+    }
+    fraction = logical / cycleWidth;
+    const step = cycleWidth / originals.length;
+    const visibleIndex = Math.floor((logical + step / 2) / step) % originals.length;
+    current.textContent = String(visibleIndex + 1).padStart(2, '0');
+    total.textContent = String(originals.length).padStart(2, '0');
+    range.value = String(Math.round(fraction * 1000));
+    range.style.setProperty('--world-progress', (fraction * 100).toFixed(2) + '%');
+  }
+
+  function makeCopy(node) {
+    const copy = node.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.querySelectorAll('button, a, input').forEach(element => {
+      element.tabIndex = -1;
     });
-    selected = nearest;
-    current.textContent = String(selected + 1).padStart(2, '0');
-    total.textContent = String(items.length).padStart(2, '0');
-    prev.disabled = selected === 0;
-    next.disabled = selected === items.length - 1;
+    return copy;
   }
 
-  function go(index) {
-    const items = slides();
-    const item = items[Math.max(0, Math.min(index, items.length - 1))];
-    if (!item) return;
-    selected = items.indexOf(item);
-    const left = item.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
-    track.scrollTo({left, behavior: prefersReduced.matches ? 'instant' : 'smooth'});
-    current.textContent = String(selected + 1).padStart(2, '0');
-    prev.disabled = selected === 0;
-    next.disabled = selected === items.length - 1;
+  function setSlides(slides) {
+    if (!slides.length) return;
+    originals = slides;
+    const before = slides.map(makeCopy);
+    after = slides.map(makeCopy);
+    track.replaceChildren(...before, ...slides, ...after);
+    // The first original and its first repeated copy are exactly one loop apart.
+    cycleWidth = after[0].offsetLeft - originals[0].offsetLeft;
+    if (cycleWidth <= 0) return;
+    fraction = 0;
+    track.scrollLeft = cycleWidth;
+    updatePosition();
   }
 
-  prev.addEventListener('click', () => go(selected - 1));
-  next.addEventListener('click', () => go(selected + 1));
+  function seek(value) {
+    if (!cycleWidth) return;
+    track.scrollLeft = cycleWidth * (1 + modulo(value, 1));
+    updatePosition();
+  }
+
+  function moveOne(direction) {
+    if (!cycleWidth || !originals.length) return;
+    pauseForInteraction();
+    const oneSlide = 1 / originals.length;
+    seek(fraction + direction * oneSlide);
+  }
+
+  previousButton.addEventListener('click', () => moveOne(-1));
+  nextButton.addEventListener('click', () => moveOne(1));
+
+  range.addEventListener('input', () => {
+    pauseForInteraction();
+    seek(Number(range.value) / 1000);
+  });
+
+  [track, range].forEach(element => {
+    element.addEventListener('pointerdown', () => {
+      pointerHeld = true;
+      pauseForInteraction();
+    });
+    element.addEventListener('wheel', pauseForInteraction, {passive: true});
+  });
+
+  function releasePointer() {
+    if (!pointerHeld) return;
+    pointerHeld = false;
+    pauseForInteraction();
+  }
+  window.addEventListener('pointerup', releasePointer);
+  window.addEventListener('pointercancel', releasePointer);
+  window.addEventListener('blur', releasePointer);
+
   track.addEventListener('keydown', event => {
     if (event.target !== track) return;
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       event.preventDefault();
-      go(selected + (event.key === 'ArrowRight' ? 1 : -1));
+      moveOne(event.key === 'ArrowRight' ? 1 : -1);
+    } else if (event.key === 'Home' || event.key === 'End') {
+      event.preventDefault();
+      pauseForInteraction();
+      seek(event.key === 'Home' ? 0 : 0.999);
     }
   });
-  let scheduled = false;
-  track.addEventListener('scroll', () => {
-    if (scheduled) return;
-    scheduled = true;
-    requestAnimationFrame(() => { scheduled = false; sync(); });
-  }, {passive:true});
-  window.addEventListener('resize', sync);
-  sync();
+  track.addEventListener('scroll', updatePosition, {passive: true});
 
-  // Optional expanded collection. The JSON file ships with the image pack.
+  function syncLayout() {
+    if (!originals.length || !after.length) return;
+    const oldFraction = fraction;
+    cycleWidth = after[0].offsetLeft - originals[0].offsetLeft;
+    if (cycleWidth <= 0) return;
+    track.scrollLeft = cycleWidth * (1 + oldFraction);
+    updatePosition();
+  }
+  window.addEventListener('resize', syncLayout);
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      inView = entries.some(entry => entry.isIntersecting);
+    }, {threshold: 0}).observe(track);
+  }
+
+  function tick(now) {
+    if (lastFrame !== null && cycleWidth &&
+        now >= pauseUntil && !pointerHeld && inView &&
+        document.visibilityState !== 'hidden' &&
+        !prefersReducedMotion.matches && !(imageDialog && imageDialog.open)) {
+      const elapsed = Math.min((now - lastFrame) / 1000, 0.08);
+      track.scrollLeft += speed * elapsed;
+      updatePosition();
+    }
+    lastFrame = now;
+    requestAnimationFrame(tick);
+  }
+
+  setSlides(Array.from(track.querySelectorAll('.world-carousel-slide')));
+  requestAnimationFrame(tick);
+
+  // Replace the fallback slides with the 21 user-provided, compressed screenshots.
   fetch('../images/interactive-3d/world-gallery/manifest.json')
-    .then(response => { if (!response.ok) throw new Error('Gallery extension not published yet'); return response.json(); })
+    .then(response => {
+      if (!response.ok) throw new Error('Gallery manifest unavailable');
+      return response.json();
+    })
     .then(entries => {
       if (!Array.isArray(entries) || !entries.length) return;
-      const items = entries.filter(entry => entry && typeof entry.file === 'string' &&
-        /^[a-z0-9-]+\.webp$/.test(entry.file) && typeof entry.map === 'string' &&
-        typeof entry.caption === 'string' && typeof entry.alt === 'string');
-      if (!items.length) return;
-      const content = items.map(entry => {
+      const valid = entries.filter(entry =>
+        entry && typeof entry.file === 'string' &&
+        /^[a-z0-9-]+\.webp$/.test(entry.file) &&
+        typeof entry.map === 'string' &&
+        typeof entry.caption === 'string' &&
+        typeof entry.alt === 'string');
+      if (!valid.length) return;
+
+      const slides = valid.map(entry => {
         const path = '../images/interactive-3d/world-gallery/' + entry.file;
-        const fig = document.createElement('figure');
-        fig.className = 'world-carousel-slide';
+        const figure = document.createElement('figure');
+        figure.className = 'world-carousel-slide';
         const button = document.createElement('button');
         button.className = 'zoom-image';
         button.type = 'button';
@@ -138,6 +241,7 @@
         zoom.setAttribute('aria-hidden', 'true');
         zoom.textContent = '↗';
         button.append(img, zoom);
+
         const caption = document.createElement('figcaption');
         const map = document.createElement('span');
         map.className = 'world-carousel-project';
@@ -145,13 +249,10 @@
         const detail = document.createElement('span');
         detail.textContent = entry.caption;
         caption.append(map, detail);
-        fig.append(button, caption);
-        return fig;
+        figure.append(button, caption);
+        return figure;
       });
-      track.replaceChildren(...content);
-      track.scrollLeft = 0;
-      selected = 0;
-      sync();
+      setSlides(slides);
     })
-    .catch(() => { /* Keep the existing project imagery as a complete fallback. */ });
+    .catch(() => { /* Keep the six original screenshots if the manifest is unavailable. */ });
 })();
