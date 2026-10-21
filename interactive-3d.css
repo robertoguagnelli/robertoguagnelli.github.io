@@ -131,3 +131,7 @@
 .bloodborne-media-row a:hover strong{text-decoration:underline;text-underline-offset:4px}
 .bloodborne-media-row a:focus-visible{outline:3px solid #448bd0;outline-offset:3px}
 @media(max-width:720px){.bloodborne-media-row{gap:20px}.bloodborne-media-heading{display:block}.bloodborne-media-heading .eyebrow{margin-bottom:6px}}
+
+/* Keep every Bloodborne character fully visible in the single-row carousel. */
+.character-carousel .world-carousel-slide .zoom-image{padding:16px;background:#e8edf2}
+.character-carousel .world-carousel-slide .zoom-image img{object-fit:contain}
