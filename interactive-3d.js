@@ -63,7 +63,7 @@
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const imageDialog = document.querySelector('.image-dialog');
-  const speed = 90; // Pixels per second: faster, continuous and seamless movement.
+  const speed = 135; // Pixels per second; continuous movement with small subpixel frame advances.
   const idleDelay = 5000; // Resume five seconds after the last manual interaction.
   let originals = [];
   let after = [];
@@ -94,10 +94,15 @@
     fraction = logical / cycleWidth;
     const step = cycleWidth / originals.length;
     const visibleIndex = Math.floor((logical + step / 2) / step) % originals.length;
-    current.textContent = String(visibleIndex + 1).padStart(2, '0');
-    total.textContent = String(originals.length).padStart(2, '0');
-    range.value = String(Math.round(fraction * 1000));
-    range.style.setProperty('--world-progress', (fraction * 100).toFixed(2) + '%');
+    const countText = String(visibleIndex + 1).padStart(2, '0');
+    if (current.textContent !== countText) current.textContent = countText;
+    const totalText = String(originals.length).padStart(2, '0');
+    if (total.textContent !== totalText) total.textContent = totalText;
+    const progress = String(Math.round(fraction * 1000));
+    if (range.value !== progress) {
+      range.value = progress;
+      range.style.setProperty('--world-progress', (fraction * 100).toFixed(2) + '%');
+    }
   }
 
   function makeCopy(node) {
@@ -206,53 +211,4 @@
   setSlides(Array.from(track.querySelectorAll('.world-carousel-slide')));
   requestAnimationFrame(tick);
 
-  // Replace the fallback slides with the 21 user-provided, compressed screenshots.
-  fetch('../images/interactive-3d/world-gallery/manifest.json')
-    .then(response => {
-      if (!response.ok) throw new Error('Gallery manifest unavailable');
-      return response.json();
-    })
-    .then(entries => {
-      if (!Array.isArray(entries) || !entries.length) return;
-      const valid = entries.filter(entry =>
-        entry && typeof entry.file === 'string' &&
-        /^[a-z0-9-]+\.webp$/.test(entry.file) &&
-        typeof entry.map === 'string' &&
-        typeof entry.caption === 'string' &&
-        typeof entry.alt === 'string');
-      if (!valid.length) return;
-
-      const slides = valid.map(entry => {
-        const path = '../images/interactive-3d/world-gallery/' + entry.file;
-        const figure = document.createElement('figure');
-        figure.className = 'world-carousel-slide';
-        const button = document.createElement('button');
-        button.className = 'zoom-image';
-        button.type = 'button';
-        button.dataset.full = path;
-        button.setAttribute('aria-label', 'Enlarge: ' + entry.alt);
-        const img = document.createElement('img');
-        img.src = path;
-        img.alt = entry.alt;
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        const zoom = document.createElement('span');
-        zoom.className = 'zoom-hint';
-        zoom.setAttribute('aria-hidden', 'true');
-        zoom.textContent = '↗';
-        button.append(img, zoom);
-
-        const caption = document.createElement('figcaption');
-        const map = document.createElement('span');
-        map.className = 'world-carousel-project';
-        map.textContent = entry.map;
-        const detail = document.createElement('span');
-        detail.textContent = entry.caption;
-        caption.append(map, detail);
-        figure.append(button, caption);
-        return figure;
-      });
-      setSlides(slides);
-    })
-    .catch(() => { /* Keep the six original screenshots if the manifest is unavailable. */ });
 })();
