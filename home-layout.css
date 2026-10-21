@@ -235,3 +235,37 @@
  .home-page .study-brand{max-width:145px;min-height:54px}
  .home-page .study-brand img{max-width:145px!important;max-height:54px!important}
 }
+
+/* Keep recruiting essentials together in the first screen. */
+.home-page .hero-copy{min-width:0}
+.home-page .hero-experience{margin-top:14px;color:#d5e4f3;font-size:.9rem;line-height:1.5}
+.home-page .hero-experience a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#677e97}
+.home-page .hero-experience span{display:block;color:#c2cfdd}
+.home-page .recruiter-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 20px;margin:20px 0 0;padding:15px 0;border-block:1px solid #39526d;max-width:760px}
+.home-page .recruiter-facts dt{font-size:.73rem;color:#b4c9dd;line-height:1.4}
+.home-page .recruiter-facts dd{margin:5px 0 0;font-size:1rem;font-weight:650;color:#fff;line-height:1.35}
+.home-page .hero-email{gap:16px}
+.home-page .hero-footnote{margin-top:14px;font-size:.75rem;line-height:1.5}
+@media(max-width:900px){
+ .home-page .profile-hero{grid-template-columns:minmax(0,1fr) 150px}
+ .home-page .portrait{height:160px}
+ .home-page .recruiter-facts{gap:12px}
+ .home-page .recruiter-facts dd{font-size:.9rem}
+}
+@media(max-width:720px){
+ .home-page .profile-hero{grid-template-columns:1fr}
+ .home-page .portrait-frame{display:none}
+}
+@media(max-width:600px){
+ .home-page .home-hero h1{font-size:clamp(2rem,8.6vw,2.5rem);margin-bottom:12px}
+ .home-page .hero-text{font-size:.9rem}
+ .home-page .hero-experience{font-size:.82rem;margin-top:12px}
+ .home-page .recruiter-facts{grid-template-columns:1fr 1fr;gap:12px 16px;margin-top:16px;padding-block:12px}
+ .home-page .recruiter-facts>div:last-child{grid-column:1/-1;display:flex;align-items:baseline;gap:10px}
+ .home-page .recruiter-facts>div:last-child dd{margin:0}
+ .home-page .recruiter-facts dt{font-size:.7rem}
+ .home-page .recruiter-facts dd{font-size:.95rem}
+ .home-page .hero-actions{gap:13px 20px;margin-top:16px}
+ .home-page .hero-email{padding:11px 14px;font-size:.82rem}
+ .home-page .hero-footnote{font-size:.7rem;margin-top:12px}
+}
