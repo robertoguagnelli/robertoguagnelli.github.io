@@ -63,7 +63,7 @@
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const imageDialog = document.querySelector('.image-dialog');
-  const speed = 37; // Pixels per second: constant, continuous movement.
+  const speed = 90; // Pixels per second: faster, continuous and seamless movement.
   const idleDelay = 5000; // Resume five seconds after the last manual interaction.
   let originals = [];
   let after = [];
