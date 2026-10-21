@@ -88,7 +88,7 @@
 .world-carousel-arrow{width:36px;height:36px;border:1px solid #b9cbd6;background:#fff;color:var(--navy);display:grid;place-items:center;cursor:pointer;font-size:1.15rem;line-height:1}
 .world-carousel-arrow:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
 .world-carousel-arrow:focus-visible,.world-carousel-track:focus-visible,.world-carousel-scrubber input:focus-visible{outline:3px solid #448bd0;outline-offset:3px}
-.world-carousel-track{display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:none;scroll-behavior:auto;scrollbar-width:none;overscroll-behavior-inline:contain;touch-action:pan-x;padding:0;min-width:0}
+.world-carousel-track{display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:none;scroll-behavior:auto;scrollbar-width:none;overscroll-behavior-inline:contain;touch-action:auto;padding:0;min-width:0}
 .world-carousel-track::-webkit-scrollbar{display:none}
 .world-carousel-slide{flex:0 0 clamp(300px,40vw,470px);min-width:0;margin:0;background:#fff;border:1px solid var(--border)}
 .world-carousel-slide .zoom-image{display:block;width:100%;height:clamp(175px,20vw,245px);aspect-ratio:auto;padding:0;overflow:hidden;background:#dfe8ee}
