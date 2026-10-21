@@ -1,6 +1,12 @@
 # robertoguagnelli.github.io
 Mechanical &amp; Aerospace Engineering Portfolio | Aircraft Design, CAD, CFD, FEA, Manufacturing &amp; Flight Testing
 
+## Reference CV
+
+The canonical general-purpose CV for this portfolio is \`assets/Roberto_Guagnelli_CV.tex\` (LaTeX source); \`assets/Roberto_Guagnelli_CV.pdf\` is the generated public download. For any future job-specific CV, begin with this source and adapt only the material relevant to the vacancy. Preserve factual experience, dates, and achievements. Use **RISE** as the project name in GE Aerospace experience, not the longer Open Fan label.
+
+The GitHub Actions workflow \`.github/workflows/build-cv.yml\` automatically rebuilds the published PDF when the LaTeX source changes.
+
 ## Content map
 
 - `index.html`: introduction, aircraft, CFD feature, GE / La Corona experience, expandable academic projects, about and contact.
