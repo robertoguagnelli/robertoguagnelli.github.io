@@ -51,164 +51,167 @@
   });
 })();
 
-/* Seamless, low-height photo belt with a user-controlled seek bar. */
+/* Independent seamless galleries with user-controlled seek bars. */
 (() => {
-  const track = document.querySelector('[data-world-track]');
-  const range = document.querySelector('[data-world-progress]');
-  const previousButton = document.querySelector('[data-world-prev]');
-  const nextButton = document.querySelector('[data-world-next]');
-  const current = document.querySelector('[data-world-current]');
-  const total = document.querySelector('[data-world-total]');
-  if (!track || !range || !previousButton || !nextButton || !current || !total) return;
-
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const imageDialog = document.querySelector('.image-dialog');
-  const speed = 105; // Pixels per second; continuous movement with small subpixel frame advances.
-  const idleDelay = 5000; // Resume five seconds after the last manual interaction.
-  let originals = [];
-  let after = [];
-  let cycleWidth = 0;
-  let fraction = 0;
-  let pauseUntil = 0;
-  let pointerHeld = false;
-  let inView = true;
-  let lastFrame = null;
-
-  function pauseForInteraction() {
-    pauseUntil = performance.now() + idleDelay;
+  function initializeCarousel(root) {
+    const track = root.querySelector('[data-world-track]');
+      const range = root.querySelector('[data-world-progress]');
+      const previousButton = root.querySelector('[data-world-prev]');
+      const nextButton = root.querySelector('[data-world-next]');
+      const current = root.querySelector('[data-world-current]');
+      const total = root.querySelector('[data-world-total]');
+      if (!track || !range || !previousButton || !nextButton || !current || !total) return;
+    
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const imageDialog = document.querySelector('.image-dialog');
+      const speed = 105; // Pixels per second; continuous movement with small subpixel frame advances.
+      const idleDelay = 5000; // Resume five seconds after the last manual interaction.
+      let originals = [];
+      let after = [];
+      let cycleWidth = 0;
+      let fraction = 0;
+      let pauseUntil = 0;
+      let pointerHeld = false;
+      let inView = true;
+      let lastFrame = null;
+    
+      function pauseForInteraction() {
+        pauseUntil = performance.now() + idleDelay;
+      }
+    
+      function modulo(value, period) {
+        return ((value % period) + period) % period;
+      }
+    
+      function updatePosition() {
+        if (!cycleWidth || !originals.length) return;
+        const oldPosition = track.scrollLeft;
+        const logical = modulo(oldPosition - cycleWidth, cycleWidth);
+        const normalized = cycleWidth + logical;
+        // The three identical image sets make this reset visually invisible.
+        if (oldPosition < cycleWidth || oldPosition >= 2 * cycleWidth) {
+          track.scrollLeft = normalized;
+        }
+        fraction = logical / cycleWidth;
+        const step = cycleWidth / originals.length;
+        const visibleIndex = Math.floor((logical + step / 2) / step) % originals.length;
+        const countText = String(visibleIndex + 1).padStart(2, '0');
+        if (current.textContent !== countText) current.textContent = countText;
+        const totalText = String(originals.length).padStart(2, '0');
+        if (total.textContent !== totalText) total.textContent = totalText;
+        const progress = String(Math.round(fraction * 1000));
+        if (range.value !== progress) {
+          range.value = progress;
+          range.style.setProperty('--world-progress', (fraction * 100).toFixed(2) + '%');
+        }
+      }
+    
+      function makeCopy(node) {
+        const copy = node.cloneNode(true);
+        copy.setAttribute('aria-hidden', 'true');
+        copy.querySelectorAll('button, a, input').forEach(element => {
+          element.tabIndex = -1;
+        });
+        return copy;
+      }
+    
+      function setSlides(slides) {
+        if (!slides.length) return;
+        originals = slides;
+        const before = slides.map(makeCopy);
+        after = slides.map(makeCopy);
+        track.replaceChildren(...before, ...slides, ...after);
+        // The first original and its first repeated copy are exactly one loop apart.
+        cycleWidth = after[0].offsetLeft - originals[0].offsetLeft;
+        if (cycleWidth <= 0) return;
+        fraction = 0;
+        track.scrollLeft = cycleWidth;
+        updatePosition();
+      }
+    
+      function seek(value) {
+        if (!cycleWidth) return;
+        track.scrollLeft = cycleWidth * (1 + modulo(value, 1));
+        updatePosition();
+      }
+    
+      function moveOne(direction) {
+        if (!cycleWidth || !originals.length) return;
+        pauseForInteraction();
+        const oneSlide = 1 / originals.length;
+        seek(fraction + direction * oneSlide);
+      }
+    
+      previousButton.addEventListener('click', () => moveOne(-1));
+      nextButton.addEventListener('click', () => moveOne(1));
+    
+      range.addEventListener('input', () => {
+        pauseForInteraction();
+        seek(Number(range.value) / 1000);
+      });
+    
+      [track, range].forEach(element => {
+        element.addEventListener('pointerdown', () => {
+          pointerHeld = true;
+          pauseForInteraction();
+        });
+        element.addEventListener('wheel', pauseForInteraction, {passive: true});
+      });
+    
+      function releasePointer() {
+        if (!pointerHeld) return;
+        pointerHeld = false;
+        pauseForInteraction();
+      }
+      window.addEventListener('pointerup', releasePointer);
+      window.addEventListener('pointercancel', releasePointer);
+      window.addEventListener('blur', releasePointer);
+    
+      track.addEventListener('keydown', event => {
+        if (event.target !== track) return;
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          moveOne(event.key === 'ArrowRight' ? 1 : -1);
+        } else if (event.key === 'Home' || event.key === 'End') {
+          event.preventDefault();
+          pauseForInteraction();
+          seek(event.key === 'Home' ? 0 : 0.999);
+        }
+      });
+      track.addEventListener('scroll', updatePosition, {passive: true});
+    
+      function syncLayout() {
+        if (!originals.length || !after.length) return;
+        const oldFraction = fraction;
+        cycleWidth = after[0].offsetLeft - originals[0].offsetLeft;
+        if (cycleWidth <= 0) return;
+        track.scrollLeft = cycleWidth * (1 + oldFraction);
+        updatePosition();
+      }
+      window.addEventListener('resize', syncLayout);
+    
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(entries => {
+          inView = entries.some(entry => entry.isIntersecting);
+        }, {threshold: 0}).observe(track);
+      }
+    
+      function tick(now) {
+        if (lastFrame !== null && cycleWidth &&
+            now >= pauseUntil && !pointerHeld && inView &&
+            document.visibilityState !== 'hidden' &&
+            !prefersReducedMotion.matches && !(imageDialog && imageDialog.open)) {
+          const elapsed = Math.min((now - lastFrame) / 1000, 0.08);
+          track.scrollLeft += speed * elapsed;
+          updatePosition();
+        }
+        lastFrame = now;
+        requestAnimationFrame(tick);
+      }
+    
+      setSlides(Array.from(track.querySelectorAll('.world-carousel-slide')));
+      requestAnimationFrame(tick);
   }
 
-  function modulo(value, period) {
-    return ((value % period) + period) % period;
-  }
-
-  function updatePosition() {
-    if (!cycleWidth || !originals.length) return;
-    const oldPosition = track.scrollLeft;
-    const logical = modulo(oldPosition - cycleWidth, cycleWidth);
-    const normalized = cycleWidth + logical;
-    // The three identical image sets make this reset visually invisible.
-    if (oldPosition < cycleWidth || oldPosition >= 2 * cycleWidth) {
-      track.scrollLeft = normalized;
-    }
-    fraction = logical / cycleWidth;
-    const step = cycleWidth / originals.length;
-    const visibleIndex = Math.floor((logical + step / 2) / step) % originals.length;
-    const countText = String(visibleIndex + 1).padStart(2, '0');
-    if (current.textContent !== countText) current.textContent = countText;
-    const totalText = String(originals.length).padStart(2, '0');
-    if (total.textContent !== totalText) total.textContent = totalText;
-    const progress = String(Math.round(fraction * 1000));
-    if (range.value !== progress) {
-      range.value = progress;
-      range.style.setProperty('--world-progress', (fraction * 100).toFixed(2) + '%');
-    }
-  }
-
-  function makeCopy(node) {
-    const copy = node.cloneNode(true);
-    copy.setAttribute('aria-hidden', 'true');
-    copy.querySelectorAll('button, a, input').forEach(element => {
-      element.tabIndex = -1;
-    });
-    return copy;
-  }
-
-  function setSlides(slides) {
-    if (!slides.length) return;
-    originals = slides;
-    const before = slides.map(makeCopy);
-    after = slides.map(makeCopy);
-    track.replaceChildren(...before, ...slides, ...after);
-    // The first original and its first repeated copy are exactly one loop apart.
-    cycleWidth = after[0].offsetLeft - originals[0].offsetLeft;
-    if (cycleWidth <= 0) return;
-    fraction = 0;
-    track.scrollLeft = cycleWidth;
-    updatePosition();
-  }
-
-  function seek(value) {
-    if (!cycleWidth) return;
-    track.scrollLeft = cycleWidth * (1 + modulo(value, 1));
-    updatePosition();
-  }
-
-  function moveOne(direction) {
-    if (!cycleWidth || !originals.length) return;
-    pauseForInteraction();
-    const oneSlide = 1 / originals.length;
-    seek(fraction + direction * oneSlide);
-  }
-
-  previousButton.addEventListener('click', () => moveOne(-1));
-  nextButton.addEventListener('click', () => moveOne(1));
-
-  range.addEventListener('input', () => {
-    pauseForInteraction();
-    seek(Number(range.value) / 1000);
-  });
-
-  [track, range].forEach(element => {
-    element.addEventListener('pointerdown', () => {
-      pointerHeld = true;
-      pauseForInteraction();
-    });
-    element.addEventListener('wheel', pauseForInteraction, {passive: true});
-  });
-
-  function releasePointer() {
-    if (!pointerHeld) return;
-    pointerHeld = false;
-    pauseForInteraction();
-  }
-  window.addEventListener('pointerup', releasePointer);
-  window.addEventListener('pointercancel', releasePointer);
-  window.addEventListener('blur', releasePointer);
-
-  track.addEventListener('keydown', event => {
-    if (event.target !== track) return;
-    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-      event.preventDefault();
-      moveOne(event.key === 'ArrowRight' ? 1 : -1);
-    } else if (event.key === 'Home' || event.key === 'End') {
-      event.preventDefault();
-      pauseForInteraction();
-      seek(event.key === 'Home' ? 0 : 0.999);
-    }
-  });
-  track.addEventListener('scroll', updatePosition, {passive: true});
-
-  function syncLayout() {
-    if (!originals.length || !after.length) return;
-    const oldFraction = fraction;
-    cycleWidth = after[0].offsetLeft - originals[0].offsetLeft;
-    if (cycleWidth <= 0) return;
-    track.scrollLeft = cycleWidth * (1 + oldFraction);
-    updatePosition();
-  }
-  window.addEventListener('resize', syncLayout);
-
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(entries => {
-      inView = entries.some(entry => entry.isIntersecting);
-    }, {threshold: 0}).observe(track);
-  }
-
-  function tick(now) {
-    if (lastFrame !== null && cycleWidth &&
-        now >= pauseUntil && !pointerHeld && inView &&
-        document.visibilityState !== 'hidden' &&
-        !prefersReducedMotion.matches && !(imageDialog && imageDialog.open)) {
-      const elapsed = Math.min((now - lastFrame) / 1000, 0.08);
-      track.scrollLeft += speed * elapsed;
-      updatePosition();
-    }
-    lastFrame = now;
-    requestAnimationFrame(tick);
-  }
-
-  setSlides(Array.from(track.querySelectorAll('.world-carousel-slide')));
-  requestAnimationFrame(tick);
-
+  document.querySelectorAll(".world-showcase").forEach(initializeCarousel);
 })();
