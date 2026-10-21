@@ -98,9 +98,10 @@
 .world-carousel-project{font-size:.64rem;font-weight:700;letter-spacing:.07em;color:var(--digital-teal)}
 .world-carousel-scrubber{display:flex;align-items:center;gap:17px;margin-top:17px}
 .world-carousel-scrubber label{flex:0 0 auto;font-size:.73rem;color:var(--muted)}
-.world-carousel-scrubber input{--world-progress:0%;appearance:none;-webkit-appearance:none;flex:1;min-width:0;width:100%;height:7px;border:0;border-radius:99px;background:linear-gradient(90deg,var(--digital-teal) 0%,var(--digital-teal) var(--world-progress),#cad6df var(--world-progress),#cad6df 100%);cursor:pointer}
-.world-carousel-scrubber input::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:16px;height:16px;border:2px solid #fff;border-radius:50%;background:var(--digital-teal);box-shadow:0 0 0 1px #66919e}
-.world-carousel-scrubber input::-moz-range-thumb{width:13px;height:13px;border:2px solid #fff;border-radius:50%;background:var(--digital-teal);box-shadow:0 0 0 1px #66919e}
+.world-carousel-scrubber input{appearance:none;-webkit-appearance:none;flex:1;min-width:0;width:100%;height:7px;border:0;border-radius:2px;background:#cad6df;cursor:pointer}
+.world-carousel-scrubber input::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:56px;height:11px;border:0;border-radius:1px;background:var(--digital-teal);box-shadow:none}
+.world-carousel-scrubber input::-moz-range-thumb{width:56px;height:11px;border:0;border-radius:1px;background:var(--digital-teal);box-shadow:none}
+.world-carousel-scrubber input::-moz-range-track,.world-carousel-scrubber input::-moz-range-progress{height:7px;border:0;border-radius:2px;background:#cad6df}
 .world-carousel-hint{margin:9px 0 0;font-size:.7rem;line-height:1.5;color:var(--muted)}
 @media(max-width:720px){.world-showcase{margin-bottom:29px;padding-top:18px}.world-showcase-heading{margin-bottom:13px}.world-showcase-heading h3{font-size:1.4rem}.world-carousel-track{gap:11px}.world-carousel-slide{flex-basis:82vw}.world-carousel-slide .zoom-image{height:clamp(156px,48vw,205px)}.world-carousel-slide figcaption{padding:9px 11px;min-height:42px;font-size:.68rem}.world-carousel-project{font-size:.61rem}.world-carousel-arrow{width:32px;height:32px}.world-carousel-count{min-width:50px;margin-right:3px;font-size:.68rem}.world-carousel-scrubber{gap:12px;margin-top:15px}.world-carousel-scrubber label{font-size:.66rem;white-space:nowrap}.world-carousel-hint{font-size:.67rem}}
 @media(max-width:410px){.world-carousel-scrubber label{display:none}.world-carousel-slide{flex-basis:86vw}}
