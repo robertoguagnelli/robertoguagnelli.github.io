@@ -116,7 +116,7 @@
     .then(entries => {
       if (!Array.isArray(entries) || !entries.length) return;
       const items = entries.filter(entry => entry && typeof entry.file === 'string' &&
-        /^[a-z0-9-]+\\.webp$/.test(entry.file) && typeof entry.map === 'string' &&
+        /^[a-z0-9-]+\.webp$/.test(entry.file) && typeof entry.map === 'string' &&
         typeof entry.caption === 'string' && typeof entry.alt === 'string');
       if (!items.length) return;
       const content = items.map(entry => {
