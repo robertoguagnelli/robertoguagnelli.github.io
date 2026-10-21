@@ -1,84 +1,90 @@
-% General CV adapted from the September 2026 engineering application layout.
-% Adapted for the public portfolio, 20 October 2026.
-% Only claims documented in the published engineering portfolio are included.
-% Compile with pdflatex; searchable, single-column, ATS-readable PDF.
-\documentclass[11pt,a4paper]{article}
+% General engineering CV. Claims sourced from the public portfolio, 21 Oct 2026.
+% Compile with pdflatex. One column, searchable text and explicit web links.
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{mathptmx}
-\usepackage[left=0.5in,right=0.5in,top=0.48in,bottom=0.48in]{geometry}
-\usepackage{enumitem}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[left=14mm,right=14mm,top=12mm,bottom=12mm]{geometry}
+\usepackage{enumitem,xcolor,microtype}
 \usepackage[hidelinks]{hyperref}
-\usepackage{microtype}
 \input{glyphtounicode}
 \pdfgentounicode=1
-\hypersetup{pdftitle={Roberto Guagnelli Garcia - General Engineering CV},pdfauthor={Roberto Guagnelli Garcia}}
+\definecolor{navy}{HTML}{153B57}
+\definecolor{muted}{HTML}{46545F}
+\hypersetup{pdftitle={Roberto Guagnelli Garcia - Mechanical and Aeronautical Engineering CV},pdfauthor={Roberto Guagnelli Garcia}}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\hyphenpenalty=10000
-\exhyphenpenalty=10000
 \raggedright
-\setlist[itemize]{leftmargin=13pt,labelsep=5pt,topsep=0.5pt,itemsep=0.2pt,parsep=0pt,partopsep=0pt}
-\newcommand{\cvsection}[1]{\vspace{6pt}{\large\bfseries #1}\par\vspace{1pt}\hrule\vspace{4pt}}
-\newcommand{\entry}[2]{#1\hfill #2\par}
+\hyphenpenalty=10000
+\setlist[itemize]{leftmargin=11pt,labelsep=4pt,topsep=2pt,itemsep=1.5pt,parsep=0pt,partopsep=0pt}
+\newcommand{\cvsection}[1]{\vspace{7pt}{\color{navy}\fontsize{10.6}{12}\selectfont\bfseries #1}\par\vspace{2pt}{\color{navy}\hrule height .5pt}\vspace{4pt}}
+\newcommand{\entry}[2]{\textbf{#1}\hfill{\small\color{muted}#2}\par}
+\newcommand{\role}[2]{{\small\textbf{#1}\hfill\color{muted}#2}\par}
 \begin{document}
-{\Large\bfseries ROBERTO GUAGNELLI GARC\'IA}\par
-\vspace{2pt}
-{\small \href{mailto:robguagnelli@gmail.com}{robguagnelli@gmail.com} $|$ Quer\'etaro, Mexico}\par
-{\small \href{https://www.linkedin.com/in/roberto-guagnelli-garcia/}{linkedin.com/in/roberto-guagnelli-garcia} $|$ \href{https://robertoguagnelli.github.io/}{robertoguagnelli.github.io}}\par
-\vspace{1.5pt}
-\textbf{Mechanical Engineering $|$ Aeronautical Engineering $|$ Aircraft Design \& Systems Integration}\par
-{\small Spanish and Mexican citizen $|$ EU work authorization $|$ Graduating July 2027 $|$ Available August 2027 $|$ Open to relocation}
+{\color{navy}\fontsize{22}{24}\selectfont\bfseries ROBERTO GUAGNELLI GARC\'IA}\par
+\vspace{3pt}
+{\fontsize{11}{13}\selectfont\textbf{Mechanical Engineering Student \textbar{} Aeronautical Engineering Concentration}}\par
+\vspace{3pt}
+{\small Mechanical design \textbullet{} Systems integration \textbullet{} Manufacturing \& engineering analysis}\par
+\vspace{5pt}
+{\small \href{mailto:robguagnelli@gmail.com}{robguagnelli@gmail.com} \textbar{} Quer\'etaro, Mexico \textbar{} Open to relocation\par
+\href{https://robertoguagnelli.github.io/}{robertoguagnelli.github.io} \textbar{} \href{https://www.linkedin.com/in/roberto-guagnelli-garcia/}{linkedin.com/in/roberto-guagnelli-garcia}\par}
+\vspace{4pt}
+\textbf{Graduation: July 2027 \textbar{} Available: August 2027 \textbar{} EU work authorization}\par
+{\small Spanish citizen \textbullet{} English C2 \textbullet{} Certified SOLIDWORKS Professional (CSWP)}
 
-\cvsection{EDUCATION}
-\entry{\textbf{Tecnol\'ogico de Monterrey}, Campus Estado de M\'exico}{Expected Jul 2027}
-B.S. Mechanical Engineering; Concentration in Aeronautical Engineering\par
-\textbf{Academic average: 91/100}
-
-\cvsection{WORK EXPERIENCE}
-\entry{\textbf{GE Aerospace} $|$ Designer Intern, Product Definition}{Aug 2026 -- Present}
-\textit{RISE $|$ Siemens NX / Teamcenter}
+\cvsection{INDUSTRY EXPERIENCE}
+\entry{GE Aerospace}{Quer\'etaro, Mexico}
+\role{Designer Intern, Product Definition \textbar{} RISE}{Aug 2026 -- Present}
 \begin{itemize}
-\item Designed \textbf{70+ support brackets} and completed \textbf{20+ electrical harness routing revisions} for mechanical/electrical integration, considering manufacturing, installation and maintainability.
-\item Resolved clearances, adjacent-system interferences and minimum cable bend-radius issues; prepared CAD models and product-definition drawings using established datums and tolerance tables.
-\item Work directly with vibration-analysis engineering teams in \textbf{Mexico and the United States} to incorporate mechanical interface and vibration/fatigue requirements into design iterations.
+\item Designed \textbf{70+ support brackets} and completed \textbf{20+ harness-routing revisions} in Siemens NX for manufacturable installations, tool access and maintainability.
+\item Resolved clearance and minimum bend-radius issues; prepared CAD models and drawings using established datums and tolerance tables within the NX / Teamcenter workflow.
+\item Collaborate with vibration-analysis teams in \textbf{Mexico and the United States}, incorporating fatigue and vibration requirements into support-hardware and routing iterations.
 \end{itemize}
-\vspace{1.5pt}
-\entry{\textbf{GE Aerospace} $|$ Lean Summer Experience Intern}{Jun 2026 -- Jul 2026}
-\textit{Integrated Performance \& Operability (IP\&O)}
+\vspace{3pt}
+\role{Lean Summer Experience Intern \textbar{} Integrated Performance \& Operability}{Jun -- Jul 2026}
 \begin{itemize}
-\item Developed visual planning tools, KPI dashboards and weekly reviews with program leads; meeting leaders measured \textbf{approximately 20\% shorter meetings}. Supported process automation in Python.
+\item Developed planning tools, KPI dashboards and weekly reviews; meeting leaders recorded \textbf{approximately 20\% shorter meetings}. Built Python automations for repetitive tasks.
 \end{itemize}
 
-\cvsection{ENGINEERING PROJECTS \& LEADERSHIP}
-\entry{\textbf{Borregos CEM AeroDesign} $|$ Tecnol\'ogico de Monterrey}{Sep 2023 -- Present}
-\entry{\textit{Engineering \& Leadership Advisor (current); former Design Captain / Engineering Coordinator}}{Aug 2024 -- Present}
+\cvsection{AIRCRAFT DESIGN, INTEGRATION \& LEADERSHIP}
+\entry{Borregos CEM AeroDesign \textbar{} Tecnol\'ogico de Monterrey}{Sep 2023 -- Present}
+\role{Engineering \& Leadership Advisor}{Sep 2026 -- Present}
+{\small Mentor the incoming Design Captain on design methods, technical reviews and cross-discipline integration.}\par
+\vspace{3pt}
+\role{Design Captain / Engineering Coordinator}{Aug 2024 -- Sep 2026}
 \begin{itemize}
-\item Led \textbf{five designers} and coordinated aircraft integration across structures, electronics, design and R\&D within a \textbf{40+ member team}; helped deliver \textbf{three aircraft built and flown}.
-\item Personally modeled \textbf{300+ CAD parts per aircraft} within 400+ component assemblies, including aerodynamic geometry, structures, landing gear, mechanical joints and system-installation hardware.
-\item \textbf{Wingull (2025):} Designed removable joints for a \textbf{4.2 m wing} to meet a \textbf{1.2 m transport limit}; supported a physical wing-load test. The aircraft completed payload-carrying flight.
-\item \textbf{Lat\'ias (2026):} Built a longitudinal flight-dynamics model with \textbf{Python and XFLR5}, calculating stability derivatives and state-space eigenvalues to characterize phugoid/short-period modes; revised payload placement to recover modeled dynamic stability.
-\item Performed aircraft-level aerodynamic, stability and propulsion trade studies; used CFD and XFLR5 findings to inform aircraft design and takeoff-performance modeling.
+\item Led \textbf{five designers} and coordinated interfaces across a \textbf{40+ member team}; modeled \textbf{300+ CAD parts per aircraft} in assemblies of 400+ components, from joints and landing gear to system installations.
+\item \textbf{Wingull:} Designed removable joints for a \textbf{4.2 m wing within a 1.2 m transport limit}; supported wing-load testing and integration of an aircraft that demonstrated payload-carrying flight.
+\item \textbf{Lat\'ias:} Built a \textbf{Python / XFLR5 longitudinal-dynamics model}; analyzed state-matrix eigenvalues and phugoid / short-period modes, then revised payload placement to recover modeled stability.
+\item Proposed and designed the Lat\'ias wing-load experiment to compare measured deflection with the structures team's prediction; coordinated aircraft integration through payload-carrying flight.
 \end{itemize}
-\vspace{1.5pt}
-\entry{\textit{Manufacturing Coordinator $|$ Hyperion}}{Sep 2023 -- Aug 2024}
+\vspace{3pt}
+\role{Manufacturing Coordinator \textbar{} Hyperion}{Sep 2023 -- Aug 2024}
 \begin{itemize}
-\item Coordinated \textbf{eight builders} in fabrication, assembly and quality control; designed and manufactured a spring-loaded aluminum nose landing gear, fitted carbon-fiber fuselage skin and corrected rib alignment with an assembly spacer.
-\item Supported an aircraft that completed \textbf{six competition flights carrying 3 kg payload}; team placed \textbf{2nd overall} and \textbf{3rd in design report} at SAE Aero Design M\'exico 2024.
-\end{itemize}
-
-\cvsection{SELECTED ENGINEERING WORK}
-\begin{itemize}
-\item \textbf{Wing CFD (2026):} Developed a 3D ANSYS Fluent workflow covering mesh refinement, SST $k$--$\omega$, steady/transient simulation, flow visualization and comparison with XFLR5 to guide wing-incidence and tip-design decisions.
-\item \textbf{Extruder failure investigation (2026):} Evaluated a fractured tool-steel screw using hardness testing, metallography, SEM/EDS evidence and torsional stress calculations.
+\item Coordinated \textbf{eight builders}; designed and built a spring-loaded aluminum nose gear and fitted the carbon-fiber fuselage skin. Team placed \textbf{2nd overall, SAE Aero Design M\'exico 2024}.
 \end{itemize}
 
-\cvsection{TECHNICAL SKILLS}
+\cvsection{SELECTED TECHNICAL PROJECTS}
+\begin{itemize}
+\item \href{https://robertoguagnelli.github.io/projects/wing-cfd.html}{\textbf{Wing aerodynamics:}} Developed steady / transient \textbf{ANSYS Fluent} simulations with SST $k$--$\omega$, mesh refinement and XFLR5 comparisons to inform wing-incidence and tip-design decisions.
+\item \href{https://robertoguagnelli.github.io/projects/bic-cutter.html}{\textbf{BIC extrusion cutter \textbar{} Team project:}} Contributed to a manufactured, instrumented prototype integrating a Geneva mechanism, gear train, feeder and cutter through a single motor drive.
+\item \href{https://robertoguagnelli.github.io/projects/extruder-failure.html}{\textbf{Extruder failure investigation \textbar{} Team project:}} Combined hardness, metallography, SEM / EDS evidence and torsional calculations to assess a fractured H13 screw and competing failure hypotheses.
+\end{itemize}
+
+\cvsection{ADDITIONAL PROFESSIONAL EXPERIENCE}
+\href{https://robertoguagnelli.github.io/projects/interactive-3d.html}{\textbf{3D asset production \& interactive development}} \textbar{} Razzleberries and independent collaborations\par
+Created \textbf{100+ Hello Kitty models and textures} to brand guidelines and \textbf{25+ Bloodborne models / variants}; developed creature behaviors and animation controllers for other Minecraft projects.
+
+\cvsection{EDUCATION \& TECHNICAL SKILLS}
+\entry{B.S. Mechanical Engineering \textbar{} Tecnol\'ogico de Monterrey}{Expected Jul 2027}
+Campus Estado de M\'exico \textbar{} Aeronautical Engineering concentration \textbar{} \textbf{91/100 average}\par
+\vspace{3pt}
 {\small
-\textbf{CAD \& Analysis:} Siemens NX, Teamcenter, SOLIDWORKS, ANSYS Fluent, XFLR5; engineering drawings, 3D CAD, steady/transient CFD, flight dynamics.\par
-\textbf{Programming \& Data:} Python; engineering analysis and process automation.\par
-\textbf{Engineering \& Manufacturing:} Aircraft configuration, systems integration, mechanical/electrical interfaces, structural test support, composites, 3D printing, laser cutting, aluminum welding.\par
-\textbf{Certification:} Certified SOLIDWORKS Professional (CSWP).\par
+\textbf{CAD \& engineering:} Siemens NX, Teamcenter, SOLIDWORKS (CSWP), engineering drawings, mechanical interfaces.\par
+\textbf{Analysis \& programming:} ANSYS Fluent, XFLR5, Python; CFD, flight dynamics, process automation.\par
+\textbf{Manufacturing:} Composite fabrication, 3D printing, laser cutting, assembly and physical-test support.\par
 \textbf{Languages:} Spanish (native), English (C2), German (A2).}
 \end{document}
