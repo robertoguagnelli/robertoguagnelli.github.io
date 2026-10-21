@@ -1,125 +1,111 @@
-% Roberto Guagnelli Garcia -- General engineering CV
-% Revised: 20 October 2026
-% Compile with: pdflatex Roberto_Guagnelli_CV.tex
+% Roberto Guagnelli Garcia -- General Mechanical / Aeronautical Engineering CV
+% Updated: 20 October 2026
+% Source of truth for the portfolio downloadable CV.
+% Compile: pdflatex -interaction=nonstopmode Roberto_Guagnelli_CV.tex
 \documentclass[10pt,a4paper]{article}
-
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{newtxtext,newtxmath}
-\usepackage[spanish,english]{babel}
+\usepackage[english]{babel}
 \usepackage{geometry}
 \usepackage{microtype}
 \usepackage{enumitem}
 \usepackage{array}
 \usepackage{hyperref}
 \usepackage{xcolor}
-\usepackage{titlesec}
 \input{glyphtounicode}
 \pdfgentounicode=1
 
-\geometry{left=0.72in,right=0.72in,top=0.51in,bottom=0.52in}
+\geometry{left=0.70in,right=0.70in,top=0.49in,bottom=0.48in}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\emergencystretch}{1em}
 \definecolor{ink}{HTML}{181818}
-\definecolor{muted}{HTML}{3E3E3E}
-\definecolor{rulegray}{HTML}{686868}
+\definecolor{muted}{HTML}{454545}
+\definecolor{rulegray}{HTML}{727272}
 \color{ink}
-\hypersetup{
-  hidelinks,
-  pdftitle={Roberto Guagnelli Garcia - Mechanical Engineering CV},
+\hypersetup{hidelinks,
+  pdftitle={Roberto Guagnelli Garcia - General Engineering CV},
   pdfauthor={Roberto Guagnelli Garcia},
-  pdfsubject={Mechanical Design, Analysis and Manufacturing - New Graduate}
-}
+  pdfsubject={Mechanical and Aeronautical Engineering - Graduate 2027}}
 
-% Resume-specific typographic hierarchy. Keep one-column and ATS friendly.
-\newcommand{\namefont}{\fontsize{17.6}{20}\selectfont}
-\newcommand{\bodyfont}{\fontsize{10.45}{12.5}\selectfont}
-\newcommand{\smallfont}{\fontsize{9.85}{11.55}\selectfont}
-\newcommand{\sectionfont}{\fontsize{10.5}{12}\selectfont}
-\newcommand{\jobfont}{\fontsize{10.3}{12}\selectfont}
+\newcommand{\namefont}{\fontsize{18}{20.5}\selectfont}
+\newcommand{\bodyfont}{\fontsize{10.45}{12.45}\selectfont}
+\newcommand{\smallfont}{\fontsize{9.85}{11.6}\selectfont}
+\newcommand{\sectionfont}{\fontsize{10.65}{12.5}\selectfont}
+\newcommand{\jobfont}{\fontsize{10.25}{12.1}\selectfont}
 \newcommand{\cvsection}[1]{%
-  \par\vspace{9.5pt}%
-  {\sectionfont\bfseries\MakeUppercase{#1}}\par\vspace{1.4pt}%
-  {\color{rulegray}\hrule height 0.42pt}\vspace{4.0pt}%
+  \par\vspace{9pt}%
+  {\sectionfont\bfseries\MakeUppercase{#1}}\par\vspace{1.15pt}%
+  {\color{rulegray}\hrule height 0.42pt}\vspace{3pt}%
 }
 \newcommand{\entry}[2]{%
-  \noindent\begin{tabular*}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.77\linewidth}@{\extracolsep{\fill}}r@{}}
+  \noindent\begin{tabular*}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.78\linewidth}@{\extracolsep{\fill}}r@{}}
     {\jobfont\bfseries #1} & {\smallfont #2}\\
-  \end{tabular*}\vspace{-1.5pt}\par
+  \end{tabular*}\vspace{-1.7pt}\par
 }
-\newcommand{\subline}[1]{{\smallfont\itshape\color{muted} #1}\par\vspace{0.7pt}}
-\newcommand{\details}[1]{{\smallfont\color{muted}#1}\par\vspace{0.6pt}}
-\newenvironment{cvbullets}{\begin{itemize}[leftmargin=1.18em,label=\textbullet,nosep,itemsep=1.6pt,topsep=0.3pt,parsep=0pt,partopsep=0pt]}{\end{itemize}\vspace{1.4pt}}
-\newcommand{\skillrow}[2]{{\bfseries #1} #2\par\vspace{1.3pt}}
+\newcommand{\subline}[1]{{\smallfont\itshape\color{muted} #1}\par\vspace{0.45pt}}
+\newenvironment{cvbullets}{\begin{itemize}[leftmargin=1.1em,label=\textbullet,nosep,itemsep=1.6pt,topsep=0.3pt,parsep=0pt,partopsep=0pt]}{\end{itemize}\vspace{0.45pt}}
+\newcommand{\skillrow}[2]{{\bfseries #1} #2\par\vspace{0.9pt}}
 
 \begin{document}
 \bodyfont
 {\raggedright
-  {\namefont\bfseries ROBERTO GUAGNELLI GARC\'IA}\par\vspace{2.8pt}
+  {\namefont\bfseries ROBERTO GUAGNELLI GARC\'IA}\par\vspace{2.6pt}
   \smallfont
-  +52 55 4976 5729 \;|\; \href{mailto:robguagnelli@gmail.com}{robguagnelli@gmail.com} \;|\; Quer\'etaro, Mexico\par\vspace{1.4pt}
-  \href{https://www.linkedin.com/in/roberto-guagnelli-garcia/}{linkedin.com/in/roberto-guagnelli-garcia} \;|\;
-  \href{https://robertoguagnelli.github.io/}{robertoguagnelli.github.io}\par\vspace{2.3pt}
-  {\bfseries Mechanical Engineering \;|\; Aeronautics Concentration \;|\; Design, Analysis \& Manufacturing}\par\vspace{1.7pt}
-  Spanish and Mexican citizen \;|\; Authorized to work in the EU \;|\; Available after July 2027; open to relocation
+  \href{mailto:robguagnelli@gmail.com}{robguagnelli@gmail.com} \;|\; Quer\'etaro, Mexico \;|\;
+  \href{https://robertoguagnelli.github.io/}{Portfolio} \;|\;
+  \href{https://www.linkedin.com/in/roberto-guagnelli-garcia/}{LinkedIn}\par\vspace{2.4pt}
+  {\bfseries Mechanical Engineering \;|\; Aeronautical Engineering Concentration \;|\; Design, Analysis \& Manufacturing}\par\vspace{1.6pt}
+  Spanish / Mexican citizenship \;|\; EU work authorization \;|\; Graduating Jul 2027; available Aug 2027 \;|\; Open to relocation
 }
-\vspace{1.0pt}
+\vspace{0.6pt}
 
 \cvsection{Education}
 \entry{Tecnol\'ogico de Monterrey, Campus Estado de M\'exico}{Expected Jul 2027}
-B.S. Mechanical Engineering, Concentration in Aeronautics \;|\; \textbf{Academic average: 91/100}
+B.S. Mechanical Engineering, Concentration in Aeronautical Engineering \;|\; \textbf{Academic average: 91/100}
 
-\cvsection{Professional Experience}
-\entry{GE Aerospace \;|\; Designer Intern, Product Definition}{Aug 2026 -- Present}
-\subline{RISE}
+\cvsection{Industry Experience}
+\entry{GE Aerospace \;|\; Product Definition / Mechanical Design Intern}{Aug 2026 -- Present}
+\subline{RISE program \;|\; Siemens NX, engineering drawings and mechanical interfaces}
 \begin{cvbullets}
-  \item Designed \textbf{70+ support brackets} and completed \textbf{20+ harness-routing revisions} in Siemens NX, accounting for manufacturing, installation and maintainability.
-  \item Resolved clearance, interference and minimum cable-bend-radius constraints at mechanical interfaces; prepared product-definition drawings and datum-based tolerance tables.
+  \item Designed \textbf{70+ support brackets} and delivered \textbf{20+ harness-routing revisions}, considering assembly access, manufacturability, maintainability, clearances and cable bend radii.
+  \item Developed CAD and product-definition drawings with datum-based tolerancing; collaborate directly with vibration-analysis engineering teams in \textbf{Mexico and the United States} to address mechanical design requirements.
 \end{cvbullets}
-\vspace{2.2pt}
-\entry{GE Aerospace \;|\; Lean Summer Experience Intern}{Jun 2026 -- Jul 2026}
+\vspace{1.8pt}
+\entry{GE Aerospace \;|\; Lean Summer Experience Intern}{Jun -- Jul 2026}
 \subline{Integrated Performance \& Operability (IP\&O)}
 \begin{cvbullets}
-  \item Implemented visual planning and KPI dashboards with program leads; meeting leaders measured approximately \textbf{20\% shorter meetings}. Supported process automation in Python.
+  \item Developed planning tools, KPI dashboards and Python automations with program leaders; meeting leaders measured approximately \textbf{20\% shorter meetings} after process changes.
 \end{cvbullets}
 
-\cvsection{Engineering Leadership \& Selected Projects}
+\cvsection{Engineering Leadership \& Aircraft Development}
 \entry{Borregos CEM AeroDesign \;|\; Tecnol\'ogico de Monterrey}{Sep 2023 -- Present}
-\details{\textbf{Leadership since Aug 2024:} Former Design Captain / Engineering Coordinator;\\[-0.3pt]\textbf{Current role:} Engineering \& Leadership Advisor}
+\subline{Engineering \& Leadership Advisor (2026--present); Design Captain / Engineering Coordinator (2024--2026); Manufacturing Coordinator (2023--2024)}
 \begin{cvbullets}
-  \item Led \textbf{five designers} and coordinated aircraft integration across a \textbf{40+ member team}. Personally modeled \textbf{300+ CAD parts per aircraft} spanning structures, mechanisms and systems-installation hardware, in assemblies of 400+ components.
-  \item \textbf{Wingull (2025):} Designed removable joints for a 4.2 m wing under a 1.2 m transport limit; supported an 18 kg distributed-load test. The aircraft completed payload-carrying flight.
-  \item \textbf{Lat\'ias (2026):} Developed longitudinal flight-dynamics models using Python and XFLR5, including stability derivatives, state-space eigenvalues and phugoid/short-period analysis; revised the loaded-CG target to recover modeled stability.
-\end{cvbullets}
-\vspace{1.7pt}
-\entry{Manufacturing Coordinator \;|\; Hyperion}{Sep 2023 -- Aug 2024}
-\begin{cvbullets}
-  \item Coordinated eight builders; designed and fabricated spring-loaded aluminum nose landing gear, fitted carbon-fiber skin and introduced an assembly spacer to correct rib misalignment.
-  \item Supported six competition flights and demonstrated 3 kg payload. The team achieved \textbf{2nd overall and 3rd in design report} at SAE Aero Design M\'exico 2024.
-\end{cvbullets}
-\vspace{1.7pt}
-\entry{Computational Aerodynamics \;|\; Individual Engineering Study}{2026}
-\begin{cvbullets}
-  \item Built a 3D wing CFD workflow in ANSYS Fluent (geometry, meshing, SST $k$--$\omega$, steady/transient simulation and post-processing). Compared aerodynamic trends with XFLR5 to guide wing-incidence and tip-design decisions.
-\end{cvbullets}
-\vspace{1.7pt}
-\entry{Extruder Screw Failure Analysis \;|\; Academic Team Project}{2026}
-\begin{cvbullets}
-  \item Investigated a fractured tool-steel extrusion screw using hardness testing, metallography, SEM/EDS and torsional stress calculations; evaluated competing failure hypotheses against physical evidence.
+  \item Led \textbf{five designers} and coordinated engineering interfaces within a \textbf{40+ person team}; helped deliver \textbf{three aircraft built and flown}. Modeled \textbf{300+ CAD parts per aircraft} within 400+ component assemblies.
+  \item \textbf{Wingull (2025):} Designed removable joints for a 4.2 m wing with a 1.2 m transport constraint; supported an 18 kg distributed-load test and subsequent payload-carrying flight.
+  \item \textbf{Lat\'ias (2026):} Modeled longitudinal flight dynamics in Python and XFLR5 (stability derivatives, state-space eigenvalues, phugoid and short-period modes); revised the loaded-CG target to recover modeled stability.
+  \item \textbf{Hyperion (2024):} Coordinated eight builders and designed/fabricated spring-loaded aluminum nose landing gear. Team earned \textbf{2nd overall} at SAE Aero Design M\'exico; aircraft completed competition flights.
 \end{cvbullets}
 
-\cvsection{Additional Digital Production Experience}
-\entry{3D Asset Development \& Interactive Content \;|\; Selected Collaborations}{2020 -- 2026}
+\cvsection{Selected Technical Projects}
+\entry{Wing Aerodynamics \;|\; CFD and Design Studies}{2026}
 \begin{cvbullets}
-  \item Created \textbf{100+ 3D models and textures} for Razzleberries' licensed \emph{Hello Kitty and Friends} Minecraft content, following brand guidelines; produced \textbf{25+} detailed characters/variants for an independent Bloodborne-inspired project.
-  \item Developed Minecraft Bedrock entities, animation behaviors and interactive mechanics using Blockbench, Blender and JSON-based configurations for additional projects.
+  \item Built steady/transient wing simulations in \textbf{ANSYS Fluent} (CAD, meshing, SST $k$--$\omega$, flow visualization) and compared aerodynamic trends with \textbf{XFLR5} to inform wing-incidence and tip-design decisions.
+\end{cvbullets}
+\vspace{1pt}
+\entry{Extruder Screw Failure Analysis \;|\; Materials Investigation}{2026}
+\begin{cvbullets}
+  \item Investigated a fractured tool-steel component using hardness tests, metallography, SEM/EDS and torsional stress analysis to assess competing failure mechanisms.
 \end{cvbullets}
 
-\cvsection{Technical Skills \& Certifications}
-\skillrow{CAD \& analysis:}{Siemens NX, SOLIDWORKS, Fusion 360, ANSYS Fluent, XFLR5, AVL; assemblies, drawings, CFD, flight dynamics.}
-\skillrow{Programming \& manufacturing:}{Python, MATLAB, Excel, Power BI, JSON; composites, 3D printing, laser cutting, forming, aluminum welding.}
-\skillrow{Additional:}{Blender, Blockbench \;|\; \textbf{CSWP certification} \;|\; Spanish (native), English (C2; IELTS 8.5), German (A2).}
+\cvsection{Technical Skills \& Credentials}
+\skillrow{Design / analysis:}{Siemens NX, SOLIDWORKS (\textbf{CSWP}), Fusion 360, ANSYS Fluent, XFLR5, AVL; CAD assemblies, drawings, CFD and flight dynamics.}
+\skillrow{Programming / fabrication:}{Python, MATLAB, Excel, Power BI; composites, 3D printing, laser cutting, sheet-metal forming and aluminum welding.}
+\skillrow{Languages:}{Spanish (native), English (C2, IELTS 8.5), German (A2).}
+\vspace{1.1pt}
+{\smallfont\color{muted}\textbf{Additional production experience:} 100+ licensed Hello Kitty 3D assets for Razzleberries; 25+ complex Bloodborne-inspired models, plus interactive asset and behavior development.}
 
 \end{document}
