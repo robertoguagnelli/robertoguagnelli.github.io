@@ -1,5 +1,5 @@
 % Roberto Guagnelli Garcia -- General Mechanical / Aeronautical Engineering CV
-% Updated: 20 October 2026
+% Updated: 20 October 2026 - expanded general version
 % Source of truth for the portfolio downloadable CV.
 % Compile: pdflatex -interaction=nonstopmode Roberto_Guagnelli_CV.tex
 \documentclass[10pt,a4paper]{article}
@@ -71,7 +71,8 @@ B.S. Mechanical Engineering, Concentration in Aeronautical Engineering \;|\; \te
 \subline{RISE program \;|\; Siemens NX, engineering drawings and mechanical interfaces}
 \begin{cvbullets}
   \item Designed \textbf{70+ support brackets} and delivered \textbf{20+ harness-routing revisions}, considering assembly access, manufacturability, maintainability, clearances and cable bend radii.
-  \item Developed CAD and product-definition drawings with datum-based tolerancing; collaborate directly with vibration-analysis engineering teams in \textbf{Mexico and the United States} to address mechanical design requirements.
+  \item Translated harness architecture into Siemens NX 3D installations and product-definition drawings, resolving integration issues around surrounding systems and datum-based tolerances.
+  \item Collaborate directly with vibration-analysis engineering teams in \textbf{Mexico and the United States}, incorporating vibration and fatigue considerations into design iterations.
 \end{cvbullets}
 \vspace{1.8pt}
 \entry{GE Aerospace \;|\; Lean Summer Experience Intern}{Jun -- Jul 2026}
@@ -88,6 +89,7 @@ B.S. Mechanical Engineering, Concentration in Aeronautical Engineering \;|\; \te
   \item \textbf{Wingull (2025):} Designed removable joints for a 4.2 m wing with a 1.2 m transport constraint; supported an 18 kg distributed-load test and subsequent payload-carrying flight.
   \item \textbf{Lat\'ias (2026):} Modeled longitudinal flight dynamics in Python and XFLR5 (stability derivatives, state-space eigenvalues, phugoid and short-period modes); revised the loaded-CG target to recover modeled stability.
   \item \textbf{Hyperion (2024):} Coordinated eight builders and designed/fabricated spring-loaded aluminum nose landing gear. Team earned \textbf{2nd overall} at SAE Aero Design M\'exico; aircraft completed competition flights.
+  \item \textbf{SAE AeroDesign 2027 (ongoing):} Co-developing the next aircraft with the Design Captain, supporting aerodynamic configuration, stability analysis and Python takeoff-performance modeling.
 \end{cvbullets}
 
 \cvsection{Selected Technical Projects}
@@ -96,16 +98,27 @@ B.S. Mechanical Engineering, Concentration in Aeronautical Engineering \;|\; \te
   \item Built steady/transient wing simulations in \textbf{ANSYS Fluent} (CAD, meshing, SST $k$--$\omega$, flow visualization) and compared aerodynamic trends with \textbf{XFLR5} to inform wing-incidence and tip-design decisions.
 \end{cvbullets}
 \vspace{1pt}
+\vspace{1pt}
+\entry{Quadrotor Aerodynamics \& Arm Structural Analysis}{2026}
+\begin{cvbullets}
+  \item Modeled hovering propeller flow and rotor interaction in \textbf{ANSYS Fluent}; studied a 7075-T6 aluminum motor arm in \textbf{ANSYS Mechanical} under thrust and bending loads, assessing deformation and angular deflection.
+\end{cvbullets}
+\vspace{1pt}
+\entry{BIC Extrusion Cutter \;|\; Mechanism Prototype}{2026}
+\begin{cvbullets}
+  \item Co-developed and assembled an instrumented single-motor cutting prototype with Geneva indexing, a gear reduction and synchronized double-blade cutting, using CAD, laser cutting, 3D printing and machining.
+\end{cvbullets}
+\vspace{1pt}
 \entry{Extruder Screw Failure Analysis \;|\; Materials Investigation}{2026}
 \begin{cvbullets}
   \item Investigated a fractured tool-steel component using hardness tests, metallography, SEM/EDS and torsional stress analysis to assess competing failure mechanisms.
 \end{cvbullets}
 
 \cvsection{Technical Skills \& Credentials}
-\skillrow{Design / analysis:}{Siemens NX, SOLIDWORKS (\textbf{CSWP}), Fusion 360, ANSYS Fluent, XFLR5, AVL; CAD assemblies, drawings, CFD and flight dynamics.}
-\skillrow{Programming / fabrication:}{Python, MATLAB, Excel, Power BI; composites, 3D printing, laser cutting, sheet-metal forming and aluminum welding.}
+\skillrow{Design / analysis:}{Siemens NX, Teamcenter, SOLIDWORKS (\textbf{CSWP}), ANSYS Fluent / Mechanical, XFLR5, AVL; CAD, GD\&T, CFD, FEA and flight dynamics.}
+\skillrow{Programming / fabrication:}{Python, MATLAB, Excel, Power BI; composites, 3D printing, laser cutting, machining, sheet-metal forming and aluminum welding.}
 \skillrow{Languages:}{Spanish (native), English (C2, IELTS 8.5), German (A2).}
 \vspace{1.1pt}
-{\smallfont\color{muted}\textbf{Additional production experience:} 100+ licensed Hello Kitty 3D assets for Razzleberries; 25+ complex Bloodborne-inspired models, plus interactive asset and behavior development.}
+{\smallfont\color{muted}\textbf{Additional digital production:} 100+ 3D models/textures for Razzleberries' licensed Hello Kitty content, following brand guidelines; 25+ detailed Bloodborne-inspired models. Built animations and interactive behaviors with Blender, Blockbench and JSON.}
 
 \end{document}
