@@ -16,13 +16,29 @@
 .home-page .case-thumbnail img{width:100%;height:100%;object-fit:contain}
 .home-page .selected-copy{padding:20px}
 .home-page .selected-copy h3{font-size:1.3rem}
-.home-page .mechanical-grid{gap:24px}
-.home-page .mechanical-image{height:125px;margin-bottom:14px}
-.home-page .mechanical-case h3{font-size:1.1rem}
+
 .home-page #interactive-3d{scroll-margin-top:108px}
 @media(max-width:1000px) and (min-width:721px){.home-page .selected-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.home-page .selected-copy{padding:16px}.home-page .case-thumbnail{height:125px}}
-@media(max-width:720px){.home-page .selected-grid{grid-template-columns:1fr;gap:18px}.home-page .selected-case{grid-template-columns:110px minmax(0,1fr)}.home-page .case-thumbnail{height:auto;padding:5px}.home-page .case-thumbnail img{height:auto}.home-page .selected-copy{padding:18px}.home-page .selected-copy .case-evidence{margin-top:10px;padding-top:10px}.home-page .mechanical-image{height:115px;margin:0}}
+@media(max-width:720px){.home-page .selected-grid{grid-template-columns:1fr;gap:18px}.home-page .selected-case{grid-template-columns:110px minmax(0,1fr)}.home-page .case-thumbnail{height:auto;padding:5px}.home-page .case-thumbnail img{height:auto}.home-page .selected-copy{padding:18px}.home-page .selected-copy .case-evidence{margin-top:10px;padding-top:10px}}
 @media(max-width:360px){.home-page .selected-case{grid-template-columns:85px minmax(0,1fr)}}
+
+/* Balanced five-card gallery, with thumbnails sized to their content. */
+.home-page .mechanical-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:24px}
+.home-page .mechanical-case{grid-column:span 2;display:flex;flex-direction:column;min-width:0}
+.home-page .mechanical-case:nth-child(n+4){grid-column:span 3;display:grid;grid-template-columns:42% minmax(0,1fr);column-gap:20px;align-content:center}
+.home-page .mechanical-image{height:170px;padding:0;margin:0 0 14px;background:transparent;overflow:hidden;border-radius:5px}
+.home-page .mechanical-image img{width:100%;height:100%;object-fit:contain}
+.home-page .mechanical-case:nth-child(3) .mechanical-image img{object-fit:cover}
+.home-page .mechanical-case:nth-child(n+4) .mechanical-image{grid-column:1;grid-row:1/4;height:150px;margin:0;align-self:center}
+.home-page .mechanical-case:nth-child(n+4)>p,.home-page .mechanical-case:nth-child(n+4)>h3{grid-column:2}
+.home-page .mechanical-case .case-discipline{margin-bottom:7px}
+.home-page .mechanical-case h3{font-size:1.1rem;margin-bottom:8px}
+@media(max-width:720px){
+.home-page .mechanical-grid{grid-template-columns:1fr;gap:22px}
+.home-page .mechanical-case,.home-page .mechanical-case:nth-child(n+4){grid-column:auto;display:grid;grid-template-columns:36% minmax(0,1fr);column-gap:16px;align-content:center}
+.home-page .mechanical-image,.home-page .mechanical-case:nth-child(n+4) .mechanical-image{grid-column:1;grid-row:1/4;height:120px;margin:0;padding:0;align-self:center}
+.home-page .mechanical-case:nth-child(3) .mechanical-image img{object-fit:contain}
+}
 </style>
 </head>
 <body class="home-page">
