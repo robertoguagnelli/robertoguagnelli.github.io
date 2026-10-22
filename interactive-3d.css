@@ -139,18 +139,18 @@
 
 /* Joint Razzleberries / Minecraft identity in Hello Kitty case heading. */
 #hello-kitty .digital-heading--with-brand{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,420px) minmax(200px,280px);align-items:center;gap:28px}
-#hello-kitty .hello-kitty-brandmark{margin:0;width:100%;max-width:420px;justify-self:center}
+#hello-kitty .hello-kitty-brandmark{margin:0;width:100%;max-width:210px;justify-self:center}
 #hello-kitty .hello-kitty-brandmark img{display:block;width:100%;height:auto;object-fit:contain}
 #hello-kitty .digital-heading--with-brand .project-meta{margin:0;text-align:right;justify-self:end}
 @media(max-width:1200px){
   #hello-kitty .digital-heading--with-brand{grid-template-columns:minmax(0,1fr) minmax(220px,320px);gap:14px 28px}
   #hello-kitty .digital-heading--with-brand>div:first-child{grid-column:1;grid-row:1/3}
-  #hello-kitty .hello-kitty-brandmark{grid-column:2;grid-row:1;max-width:320px}
+  #hello-kitty .hello-kitty-brandmark{grid-column:2;grid-row:1;max-width:160px}
   #hello-kitty .digital-heading--with-brand .project-meta{grid-column:2;grid-row:2;text-align:center;justify-self:center}
 }
 @media(max-width:720px){
   #hello-kitty .digital-heading--with-brand{grid-template-columns:1fr;gap:15px}
   #hello-kitty .digital-heading--with-brand>div:first-child{grid-column:1;grid-row:1}
-  #hello-kitty .hello-kitty-brandmark{grid-column:1;grid-row:2;max-width:290px;justify-self:start}
+  #hello-kitty .hello-kitty-brandmark{grid-column:1;grid-row:2;max-width:145px;justify-self:start}
   #hello-kitty .digital-heading--with-brand .project-meta{grid-column:1;grid-row:3;text-align:left;justify-self:start}
 }
