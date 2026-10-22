@@ -1,0 +1,100 @@
+/* Hyperion: smaller supporting media and more generous reading columns.
+   Scoped to this case study so other aircraft projects remain unchanged. */
+.case-page.hyperion-page .hyperion-intro-visuals{
+  max-width:920px;
+  margin:20px auto 28px;
+  grid-template-columns:minmax(0,1.6fr) minmax(0,.65fr);
+  gap:24px;
+}
+.case-page.hyperion-page .hyperion-intro-visuals figure{
+  min-width:0;
+}
+.case-page.hyperion-page .hyperion-intro-visuals img{
+  max-height:min(340px,calc(100svh - 180px))!important;
+}
+.case-page.hyperion-page .hp-pair{
+  grid-template-columns:minmax(0,1.32fr) minmax(0,.9fr);
+  align-items:center;
+  gap:36px;
+}
+.case-page.hyperion-page .hp-pair>figure{
+  width:100%;
+  max-width:430px;
+  justify-self:center;
+}
+.case-page.hyperion-page .hp-pair figure img{
+  max-height:min(315px,calc(100svh - 180px))!important;
+}
+.case-page.hyperion-page .hp-pair video{
+  width:100%;
+  max-width:430px;
+  max-height:min(300px,calc(100svh - 180px))!important;
+  margin-inline:auto;
+}
+.case-page.hyperion-page .case-section p:not(.eyebrow):not(.caption),
+.case-page.hyperion-page .case-section li{
+  font-size:1.0625rem;
+  line-height:1.72;
+}
+.case-page.hyperion-page .case-section h3{
+  font-size:1.22rem;
+}
+.case-page.hyperion-page .hp-gear{
+  max-width:830px;
+  margin-inline:auto;
+  grid-template-columns:minmax(0,.72fr) minmax(0,1fr);
+  gap:24px;
+}
+.case-page.hyperion-page .hp-gear>figure{
+  max-width:100%;
+}
+.case-page.hyperion-page .hp-gear img{
+  max-height:min(310px,calc(100svh - 180px))!important;
+}
+@media(max-width:920px){
+  .case-page.hyperion-page .hp-pair:not(.hp-gear){
+    grid-template-columns:minmax(0,1fr);
+    gap:18px;
+  }
+  .case-page.hyperion-page .hp-pair:not(.hp-gear)>figure{
+    width:100%;
+    max-width:540px;
+    justify-self:start;
+  }
+  .case-page.hyperion-page .hp-gear{
+    max-width:720px;
+  }
+}
+@media(max-width:720px){
+  .case-page.hyperion-page .hyperion-intro-visuals{
+    grid-template-columns:1fr;
+    max-width:500px;
+    margin:14px auto 24px;
+    gap:20px;
+  }
+  .case-page.hyperion-page .hyperion-intro-visuals img{
+    max-height:min(275px,calc(100svh - 155px))!important;
+  }
+  .case-page.hyperion-page .hp-gear{
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .case-page.hyperion-page .hp-pair figure img,
+  .case-page.hyperion-page .hp-gear img{
+    max-height:min(275px,calc(100svh - 155px))!important;
+  }
+  .case-page.hyperion-page .hp-pair video{
+    max-width:100%;
+    max-height:min(280px,calc(100svh - 155px))!important;
+  }
+  .case-page.hyperion-page .case-section p:not(.eyebrow):not(.caption),
+  .case-page.hyperion-page .case-section li{
+    font-size:1rem;
+    line-height:1.7;
+  }
+}
+@media(max-width:430px){
+  .case-page.hyperion-page .hp-gear{
+    grid-template-columns:1fr;
+  }
+}
