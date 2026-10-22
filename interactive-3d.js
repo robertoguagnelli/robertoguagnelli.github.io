@@ -21,33 +21,14 @@
   });
 })();
 
-/* Load YouTube embeds only after a visitor chooses a video. */
+/* Open videos externally instead of embedding YouTube on the portfolio. */
 (() => {
-  const dialog = document.querySelector('.video-dialog');
-  if (!dialog || typeof dialog.showModal !== 'function') return;
-  const frame = dialog.querySelector('.video-player-frame');
   document.querySelectorAll('[data-video]').forEach(button => {
     button.addEventListener('click', () => {
       const id = button.dataset.video;
       if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
-      dialog.querySelector('h3').textContent = button.dataset.title;
-      dialog.querySelector('.video-external-link').href = 'https://www.youtube.com/watch?v=' + id;
-      const player = document.createElement('iframe');
-      player.title = button.dataset.title;
-      player.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
-      player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      player.allowFullscreen = true;
-      player.referrerPolicy = 'strict-origin-when-cross-origin';
-      frame.replaceChildren(player);
-      dialog.showModal();
+      window.open('https://www.youtube.com/watch?v=' + id, '_blank', 'noopener,noreferrer');
     });
-  });
-  dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('close', () => frame.replaceChildren());
-  dialog.addEventListener('click', event => {
-    if (event.target !== dialog) return;
-    const box = dialog.getBoundingClientRect();
-    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
   });
 })();
 
