@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Roberto Guagnelli | Mechanical &amp; Aeronautical Engineering</title>
-<meta name="description" content="Mechanical Engineering student with an Aeronautical Engineering concentration. GE Aerospace experience, aircraft design and analysis. Graduating July 2027; available July 2027. EU work authorization.">
+<meta name="description" content="Mechanical Engineering student with an Aeronautical Engineering concentration. GE Aerospace experience, aircraft design and analysis. Graduating June 21, 2027; available July 2027. EU work authorization.">
 <meta name="theme-color" content="#081a2f">
 <link rel="stylesheet" href="style.css?v=20260924-studies">
 <link rel="stylesheet" href="home-layout.css?v=20261020-matched-emblems">
@@ -40,28 +40,41 @@
 .home-page .mechanical-image,.home-page .mechanical-case:nth-child(n+4) .mechanical-image{grid-column:1;grid-row:1/4;height:120px;margin:0;padding:0;align-self:center}
 .home-page .mechanical-case:nth-child(3) .mechanical-image img{object-fit:contain}
 }
+/* A quiet, single-row header and a short introduction, including on mobile. */
+.home-page .nav-container{min-height:60px;flex-direction:row;align-items:center;padding-block:6px;gap:16px}
+.home-page .site-header nav{width:auto;gap:24px;justify-content:flex-end}
+.home-page .site-header nav a{font-size:.875rem;min-height:44px;display:inline-flex;align-items:center;padding:8px 0}
+.home-page .site-header nav .nav-cv{border:0;border-radius:0;padding:8px 0;color:#d4e0ec}
+.home-page .home-hero{padding:48px 0}
+.home-page .intro-role{font-size:clamp(1.125rem,2vw,1.4rem);line-height:1.55;color:#d4e0ec;margin-top:18px}
+.home-page .intro-work{font-size:1rem;line-height:1.55;color:#9dc5ec;margin-top:20px;max-width:36ch}
+.home-page .intro-work a:hover{text-decoration:underline;text-underline-offset:4px}
+.home-page .profile-facts>div{grid-template-columns:140px minmax(0,1fr)}
+.home-document{scroll-padding-top:72px}
+.home-page section[id],.home-page #wing-aerodynamics,.home-page #interactive-3d{scroll-margin-top:72px}
+@media(max-width:720px){
+ .home-page .nav-container{min-height:56px;gap:12px;padding-block:4px}
+ .home-page .site-header nav{gap:20px}
+ .home-page .home-hero{padding:32px 0 36px}
+ .home-page .home-hero h1{font-size:clamp(1.85rem,7.8vw,3rem);line-height:1.12;margin:0}
+ .home-page .intro-role{margin-top:16px;font-size:1.125rem}
+ .home-page .intro-work{margin-top:16px}
+ .home-page .profile-facts>div{grid-template-columns:1fr;gap:2px;margin-top:16px}
+}
 </style>
 </head>
 <body class="home-page">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="container nav-container">
-<a href="index.html" class="logo"><span class="monogram" aria-hidden="true">RG.</span><span>Roberto Guagnelli</span></a>
-<nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#projects">Aircraft</a><a href="#additional">More</a><a href="#about">About</a><a class="nav-cv" href="assets/Roberto_Guagnelli_CV.pdf" target="_blank" rel="noopener noreferrer" data-cv-download type="application/pdf">CV <span aria-hidden="true">↓</span></a></nav>
+<a href="#main" class="logo" aria-label="Roberto Guagnelli — home"><span class="monogram" aria-hidden="true">RG.</span></a>
+<nav aria-label="Main navigation"><a href="#projects">Portfolio</a><a href="https://www.linkedin.com/in/roberto-guagnelli-garcia/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="nav-cv" href="assets/Roberto_Guagnelli_CV.pdf" target="_blank" rel="noopener noreferrer" data-cv-download type="application/pdf">CV</a></nav>
 </div></header>
 <main id="main">
 <section class="hero home-hero"><div class="container profile-hero">
 <div class="hero-copy">
-<p class="eyebrow">MECHANICAL DESIGN · INTEGRATION · ANALYSIS</p>
-<h1>Roberto Guagnelli<span class="hero-degree">Mechanical Engineering student</span></h1>
-<p class="hero-education">Tecnológico de Monterrey · Aeronautical Engineering concentration</p>
-<p class="hero-experience"><a href="#experience">GE Aerospace · Product Definition Intern</a><span>Former AeroDesign Design Captain</span></p>
-<dl class="recruiter-facts" aria-label="Graduation and employment availability">
-<div><dt>Expected graduation</dt><dd>July 2027</dd></div>
-<div><dt>Available full-time</dt><dd>July 2027</dd></div>
-<div><dt>Work authorization</dt><dd>EU · Spanish citizen</dd></div>
-</dl>
-<div class="hero-actions"><a class="button" href="assets/Roberto_Guagnelli_CV.pdf" target="_blank" rel="noopener noreferrer" data-cv-download type="application/pdf">Download CV <span aria-hidden="true">↓</span></a><a class="hero-email" href="mailto:robguagnelli@gmail.com">robguagnelli@gmail.com <span aria-hidden="true">↗</span></a><a class="hero-email" href="https://www.linkedin.com/in/roberto-guagnelli-garcia/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div>
-<p class="hero-location">Querétaro, Mexico · Open to relocation</p>
+<h1>Roberto Guagnelli</h1>
+<p class="intro-role">Mechanical Engineering student.<br>Mechanical &amp; aircraft design.</p>
+<p class="intro-work"><a href="#experience">Product Definition Intern at GE Aerospace</a></p>
 </div>
 <figure class="portrait-frame"><img class="portrait" src="images/roberto-guagnelli-480.webp" width="474" height="480" alt="Roberto Guagnelli" fetchpriority="high" decoding="async"><figcaption>From first principles<br>to flight hardware.</figcaption></figure>
 </div></section>
@@ -112,7 +125,11 @@
 
 <section class="section profile-section" id="about"><div class="container profile-grid">
 <div><p class="eyebrow">04 / PROFILE</p><h2>Curiosity, carried into practice.</h2>
+<p class="profile-intro">Mechanical Engineering student at Tecnológico de Monterrey with a concentration in Aeronautical Engineering. Former AeroDesign Design Captain, now Engineering &amp; Leadership Advisor.</p>
 <dl class="profile-facts">
+<div><dt>Graduation</dt><dd>June 21, 2027 · Available full-time July 2027</dd></div>
+<div><dt>Location</dt><dd>Querétaro, Mexico · Open to relocation</dd></div>
+<div><dt>Work authorization</dt><dd>EU · Spanish citizen</dd></div>
 <div><dt>Education</dt><dd>Tecnológico de Monterrey, Campus Estado de México · Academic average: <strong>91/100</strong></dd></div>
 <div><dt>Certification</dt><dd>Certified SOLIDWORKS Professional <strong>(CSWP)</strong></dd></div>
 <div><dt>Languages</dt><dd>Spanish · Native &nbsp; / &nbsp; English · C2 &nbsp; / &nbsp; German · A2</dd></div>
