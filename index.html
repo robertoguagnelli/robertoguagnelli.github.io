@@ -53,11 +53,11 @@
  .home-page .intro-work{margin-top:16px}
  .home-page .profile-facts>div{grid-template-columns:1fr;gap:2px;margin-top:16px}
 }
-/* Keep the portrait visible without crowding the mobile introduction. */
+/* Center a framed portrait below the introduction on mobile. */
 @media(max-width:720px){
- .home-page .profile-hero{gap:20px}
- .home-page .portrait-frame{display:block;order:-1;width:120px;margin:0}
- .home-page .portrait{width:100%;height:auto;max-height:none}
+ .home-page .profile-hero{gap:28px}
+ .home-page .portrait-frame{display:block;order:0;justify-self:center;width:min(260px,100%);margin:0;padding:10px;border:1px solid #7891a9;border-radius:6px;background:#102a46}
+ .home-page .portrait{width:100%;height:auto;max-height:none;border-radius:2px}
  .home-page .portrait-frame figcaption{display:none}
 }
 </style>
