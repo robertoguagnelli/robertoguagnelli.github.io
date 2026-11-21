@@ -60,6 +60,31 @@
  .home-page .portrait{width:100%;height:auto;max-height:none;border-radius:2px}
  .home-page .portrait-frame figcaption{display:none}
 }
+/* Repeat the aircraft image treatment across homepage cards on mobile. */
+@media(max-width:720px){
+ .home-page .mechanical-case,.home-page .mechanical-case:nth-child(n+4){
+  grid-template-columns:42% minmax(0,1fr);column-gap:0;align-content:stretch;
+  background:#fff;border:1px solid #d9e1e8;border-radius:5px;overflow:hidden;padding:0;
+ }
+ .home-page .mechanical-image,.home-page .mechanical-case:nth-child(n+4) .mechanical-image{
+  position:relative;align-self:stretch;height:auto;min-height:180px;margin:0;padding:0;border-radius:0;
+  clip-path:polygon(0 0,100% 0,82% 100%,0 100%);
+ }
+ .home-page .mechanical-image img,.home-page .mechanical-case:nth-child(3) .mechanical-image img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
+ }
+ .home-page .mechanical-case>.case-discipline{padding:18px 18px 0;margin:0 0 7px}
+ .home-page .mechanical-case>h3{padding:0 18px}
+ .home-page .mechanical-case>p:not(.case-discipline){padding:0 18px 18px}
+ .home-page .career-expanded figure img,.home-page .personal-photo img{
+  clip-path:polygon(0 0,100% 0,90% 100%,0 100%);
+ }
+}
+@media(max-width:360px){
+ .home-page .mechanical-case>.case-discipline{padding:14px 14px 0}
+ .home-page .mechanical-case>h3{padding:0 14px}
+ .home-page .mechanical-case>p:not(.case-discipline){padding:0 14px 14px}
+}
 </style>
 </head>
 <body class="home-page">
