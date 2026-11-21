@@ -40,21 +40,13 @@
 .home-page .mechanical-image,.home-page .mechanical-case:nth-child(n+4) .mechanical-image{grid-column:1;grid-row:1/4;height:120px;margin:0;padding:0;align-self:center}
 .home-page .mechanical-case:nth-child(3) .mechanical-image img{object-fit:contain}
 }
-/* A quiet, single-row header and a short introduction, including on mobile. */
-.home-page .nav-container{min-height:60px;flex-direction:row;align-items:center;padding-block:6px;gap:16px}
-.home-page .site-header nav{width:auto;gap:24px;justify-content:flex-end}
-.home-page .site-header nav a{font-size:.875rem;min-height:44px;display:inline-flex;align-items:center;padding:8px 0}
-.home-page .site-header nav .nav-cv{border:0;border-radius:0;padding:8px 0;color:#d4e0ec}
+/* A short, personal introduction, including on mobile. */
 .home-page .home-hero{padding:48px 0}
 .home-page .intro-role{font-size:clamp(1.125rem,2vw,1.4rem);line-height:1.55;color:#d4e0ec;margin-top:18px}
 .home-page .intro-work{font-size:1rem;line-height:1.55;color:#9dc5ec;margin-top:20px;max-width:36ch}
 .home-page .intro-work a:hover{text-decoration:underline;text-underline-offset:4px}
 .home-page .profile-facts>div{grid-template-columns:140px minmax(0,1fr)}
-.home-document{scroll-padding-top:72px}
-.home-page section[id],.home-page #wing-aerodynamics,.home-page #interactive-3d{scroll-margin-top:72px}
 @media(max-width:720px){
- .home-page .nav-container{min-height:56px;gap:12px;padding-block:4px}
- .home-page .site-header nav{gap:20px}
  .home-page .home-hero{padding:32px 0 36px}
  .home-page .home-hero h1{font-size:clamp(1.85rem,7.8vw,3rem);line-height:1.12;margin:0}
  .home-page .intro-role{margin-top:16px;font-size:1.125rem}
@@ -66,8 +58,8 @@
 <body class="home-page">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="container nav-container">
-<a href="#main" class="logo" aria-label="Roberto Guagnelli — home"><span class="monogram" aria-hidden="true">RG.</span></a>
-<nav aria-label="Main navigation"><a href="#projects">Portfolio</a><a href="https://www.linkedin.com/in/roberto-guagnelli-garcia/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="nav-cv" href="assets/Roberto_Guagnelli_CV.pdf" target="_blank" rel="noopener noreferrer" data-cv-download type="application/pdf">CV</a></nav>
+<a href="index.html" class="logo"><span class="monogram" aria-hidden="true">RG.</span><span>Roberto Guagnelli</span></a>
+<nav aria-label="Main navigation"><a href="#experience">Experience</a><a href="#projects">Aircraft</a><a href="#additional">More</a><a href="#about">About</a><a class="nav-cv" href="assets/Roberto_Guagnelli_CV.pdf" target="_blank" rel="noopener noreferrer" data-cv-download type="application/pdf">CV <span aria-hidden="true">↓</span></a></nav>
 </div></header>
 <main id="main">
 <section class="hero home-hero"><div class="container profile-hero">
